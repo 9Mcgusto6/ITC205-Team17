@@ -23,9 +23,9 @@ public class Calendar {
 		calendar.add(java.util.Calendar.DATE, days);		
 	}
 	
-	public synchronized void setDate(Date DaTe) {
+	public synchronized void setDate(Date date) {
 		try {
-			calendar.setTime(DaTe);
+			calendar.setTime(date);
 	        calendar.set(java.util.Calendar.HOUR_OF_DAY, 0);  
 	        calendar.set(java.util.Calendar.MINUTE, 0);  
 	        calendar.set(java.util.Calendar.SECOND, 0);  
