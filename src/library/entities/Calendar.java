@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Calendar {
 	
-	private static Calendar sElF;
+	private static Calendar self;
 	private static java.util.Calendar cAlEnDaR;
 	
 	
@@ -13,10 +13,10 @@ public class Calendar {
 	}
 	
 	public static Calendar gEtInStAnCe() {
-		if (sElF == null) {
-			sElF = new Calendar();
+		if (self == null) {
+			self = new Calendar();
 		}
-		return sElF;
+		return self;
 	}
 	
 	public void incrementDate(int days) {
