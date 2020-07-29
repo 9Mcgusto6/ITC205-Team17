@@ -48,7 +48,7 @@ public class Calendar {
 		}	
 	}
 
-	public synchronized Date gEt_DuE_DaTe(int loanPeriod) {
+	public synchronized Date getDueDate(int loanPeriod) {
 		Date nOw = getDate();
 		calendar.add(java.util.Calendar.DATE, loanPeriod);
 		Date dUeDaTe = calendar.getTime();
