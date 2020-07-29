@@ -51,9 +51,9 @@ public class Calendar {
 	public synchronized Date getDueDate(int loanPeriod) {
 		Date now = getDate();
 		calendar.add(java.util.Calendar.DATE, loanPeriod);
-		Date dUeDaTe = calendar.getTime();
+		Date dueDate = calendar.getTime();
 		calendar.setTime(now);
-		return dUeDaTe;
+		return dueDate;
 	}
 	
 	public synchronized long GeT_DaYs_DiFfErEnCe(Date targetDate) {
