@@ -12,7 +12,7 @@ public class Calendar {
 		calendar = java.util.Calendar.getInstance();
 	}
 	
-	public static Calendar gEtInStAnCe() {
+	public static Calendar getInstance() {
 		if (self == null) {
 			self = new Calendar();
 		}
