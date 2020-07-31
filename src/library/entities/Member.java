@@ -91,7 +91,7 @@ public class Member implements Serializable {
         return change;
     }
     
-    public void dIsChArGeLoAn(Loan Loan) {
+    public void dischargeLoan(Loan Loan) {
         if (currentLoans.containsKey(Loan.GeT_Id())) {
             currentLoans.remove(Loan.GeT_Id());
         }
