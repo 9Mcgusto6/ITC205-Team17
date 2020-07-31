@@ -47,7 +47,7 @@ public class Member implements Serializable {
         return new ArrayList<Loan>(currentLoans.values());
     }
     
-    public int gEt_nUmBeR_Of_CuRrEnT_LoAnS() {
+    public int getNumberOfCurrentLoans() {
         return currentLoans.size();
     }
     
