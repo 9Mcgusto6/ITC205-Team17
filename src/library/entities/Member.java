@@ -39,7 +39,7 @@ public class Member implements Serializable {
         return stringBuilder.toString();
     }
     
-    public int GeT_ID() {
+    public int getMemberId() {
         return memberId;
     }
     
