@@ -55,9 +55,9 @@ public class Member implements Serializable {
         return finesOwing;
     }
     
-    public void takeOutLoan(Loan lOaN) {
-        if (!currentLoans.containsKey(lOaN.GeT_Id()))
-            currentLoans.put(lOaN.GeT_Id(), lOaN);
+    public void takeOutLoan(Loan Loan) {
+        if (!currentLoans.containsKey(Loan.GeT_Id()))
+            currentLoans.put(Loan.GeT_Id(), Loan);
         else
             throw new RuntimeException("Duplicate loan added to member");
     }
