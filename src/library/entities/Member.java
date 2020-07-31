@@ -30,8 +30,7 @@ public class Member implements Serializable {
         stringBuilder.append("Member:  ").append(memberId).append("\n")
                 .append("  Name:  ").append(lastName).append(", ").append(firstName).append("\n")
                 .append("  Email: ").append(emailAddress).append("\n")
-                .append("  Phone: ").append(phoneNumber)
-                .append("\n")
+                .append("  Phone: ").append(phoneNumber).append("\n")
                 .append(String.format("  Fines Owed :  $%.2f", finesOwing))
                 .append("\n");
         
