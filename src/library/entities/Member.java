@@ -43,7 +43,7 @@ public class Member implements Serializable {
         return memberId;
     }
     
-    public List<Loan> GeT_LoAnS() {
+    public List<Loan> getLoans() {
         return new ArrayList<Loan>(currentLoans.values());
     }
     
