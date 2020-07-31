@@ -8,7 +8,7 @@ import java.util.Map;
 @SuppressWarnings("serial")
 public class Member implements Serializable {
     
-    private String LaSt_NaMe;
+    private String lastName;
     private String FiRsT_NaMe;
     private String EmAiL_AdDrEsS;
     private int PhOnE_NuMbEr;
@@ -17,7 +17,7 @@ public class Member implements Serializable {
     private Map<Integer, Loan> cUrReNt_lOaNs;
     
     public Member(String lAsT_nAmE, String fIrSt_nAmE, String eMaIl_aDdReSs, int pHoNe_nUmBeR, int mEmBeR_iD) {
-        this.LaSt_NaMe = lAsT_nAmE;
+        this.lastName = lAsT_nAmE;
         this.FiRsT_NaMe = fIrSt_nAmE;
         this.EmAiL_AdDrEsS = eMaIl_aDdReSs;
         this.PhOnE_NuMbEr = pHoNe_nUmBeR;
@@ -28,7 +28,7 @@ public class Member implements Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Member:  ").append(MeMbEr_Id).append("\n")
-                .append("  Name:  ").append(LaSt_NaMe).append(", ").append(FiRsT_NaMe).append("\n")
+                .append("  Name:  ").append(lastName).append(", ").append(FiRsT_NaMe).append("\n")
                 .append("  Email: ").append(EmAiL_AdDrEsS).append("\n")
                 .append("  Phone: ").append(PhOnE_NuMbEr)
                 .append("\n")
@@ -65,7 +65,7 @@ public class Member implements Serializable {
     }
     
     public String GeT_LaSt_NaMe() {
-        return LaSt_NaMe;
+        return lastName;
     }
     
     public String GeT_FiRsT_NaMe() {
