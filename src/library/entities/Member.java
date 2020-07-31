@@ -26,8 +26,8 @@ public class Member implements Serializable {
     }
     
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Member:  ").append(memberId).append("\n")
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Member:  ").append(memberId).append("\n")
                 .append("  Name:  ").append(lastName).append(", ").append(firstName).append("\n")
                 .append("  Email: ").append(emailAddress).append("\n")
                 .append("  Phone: ").append(phoneNumber)
@@ -36,9 +36,9 @@ public class Member implements Serializable {
                 .append("\n");
         
         for (Loan LoAn : currentLoans.values()) {
-            sb.append(LoAn).append("\n");
+            stringBuilder.append(LoAn).append("\n");
         }
-        return sb.toString();
+        return stringBuilder.toString();
     }
     
     public int GeT_ID() {
