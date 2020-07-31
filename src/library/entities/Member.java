@@ -16,11 +16,11 @@ public class Member implements Serializable {
     private double finesOwing;
     private Map<Integer, Loan> currentLoans;
     
-    public Member(String lastName, String firstName, String emailAddress, int pHoNe_nUmBeR, int mEmBeR_iD) {
+    public Member(String lastName, String firstName, String emailAddress, int phoneNumber, int mEmBeR_iD) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.emailAddress = emailAddress;
-        this.phoneNumber = pHoNe_nUmBeR;
+        this.phoneNumber = phoneNumber;
         this.memberId = mEmBeR_iD;
         this.currentLoans = new HashMap<>();
     }
