@@ -74,16 +74,16 @@ public class Member implements Serializable {
         finesOwing += fine;
     }
     
-    public double payFine(double AmOuNt) {
-        if (AmOuNt < 0)
+    public double payFine(double amount) {
+        if (amount < 0)
             throw new RuntimeException("Member.payFine: amount must be positive");
         double change = 0;
-        if (AmOuNt > finesOwing) {
-            change = AmOuNt - finesOwing;
+        if (amount > finesOwing) {
+            change = amount - finesOwing;
             finesOwing = 0;
         }
         else
-            finesOwing -= AmOuNt;
+            finesOwing -= amount;
         return change;
     }
     
