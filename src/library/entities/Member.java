@@ -66,7 +66,7 @@ public class Member implements Serializable {
         return lastName;
     }
     
-    public String GeT_FiRsT_NaMe() {
+    public String getFirstName() {
         return firstName;
     }
     
