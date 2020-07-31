@@ -33,8 +33,8 @@ public class Member implements Serializable {
                 .append("  Phone: ").append(phoneNumber).append("\n")
                 .append(String.format("  Fines Owed :  $%.2f", finesOwing)).append("\n");
         
-        for (Loan LoAn : currentLoans.values()) {
-            stringBuilder.append(LoAn).append("\n");
+        for (Loan Loan : currentLoans.values()) {
+            stringBuilder.append(Loan).append("\n");
         }
         return stringBuilder.toString();
     }
@@ -87,9 +87,9 @@ public class Member implements Serializable {
         return change;
     }
     
-    public void dIsChArGeLoAn(Loan LoAn) {
-        if (currentLoans.containsKey(LoAn.GeT_Id()))
-            currentLoans.remove(LoAn.GeT_Id());
+    public void dIsChArGeLoAn(Loan Loan) {
+        if (currentLoans.containsKey(Loan.GeT_Id()))
+            currentLoans.remove(Loan.GeT_Id());
         else
             throw new RuntimeException("No such loan held by member");
     }
