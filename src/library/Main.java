@@ -56,7 +56,7 @@ public class Main {
 		try {			
 			IN = new Scanner(System.in);
 			LIB = Library.GeTiNsTaNcE();
-			CAL = Calendar.gEtInStAnCe();
+			CAL = Calendar.getInstance();
 			SDF = new SimpleDateFormat("dd/MM/yyyy");
 	
 			for (Member m : LIB.lIsT_MeMbErS()) {
@@ -135,7 +135,8 @@ public class Main {
 		output("\nEnded\n");
 	}	
 
-		private static void PAY_FINES() {
+	
+	private static void PAY_FINES() {
 		new PayFineUI(new pAY_fINE_cONTROL()).RuN();		
 	}
 
