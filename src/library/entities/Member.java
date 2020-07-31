@@ -70,7 +70,7 @@ public class Member implements Serializable {
         return firstName;
     }
     
-    public void AdD_FiNe(double fine) {
+    public void addFine(double fine) {
         finesOwing += fine;
     }
     
