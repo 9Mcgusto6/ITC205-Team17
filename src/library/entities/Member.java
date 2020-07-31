@@ -55,7 +55,7 @@ public class Member implements Serializable {
         return finesOwing;
     }
     
-    public void TaKe_OuT_LoAn(Loan lOaN) {
+    public void takeOutLoan(Loan lOaN) {
         if (!currentLoans.containsKey(lOaN.GeT_Id()))
             currentLoans.put(lOaN.GeT_Id(), lOaN);
         else
