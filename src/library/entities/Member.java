@@ -59,8 +59,9 @@ public class Member implements Serializable {
         if (!currentLoans.containsKey(Loan.GeT_Id())) {
             currentLoans.put(Loan.GeT_Id(), Loan);
         }
-        else
+        else {
             throw new RuntimeException("Duplicate loan added to member");
+        }
     }
     
     public String getLastName() {
