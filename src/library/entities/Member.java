@@ -11,7 +11,7 @@ public class Member implements Serializable {
     private String lastName;
     private String firstName;
     private String emailAddress;
-    private int PhOnE_NuMbEr;
+    private int phoneNumber;
     private int MeMbEr_Id;
     private double FiNeS_OwInG;
     private Map<Integer, Loan> cUrReNt_lOaNs;
@@ -20,7 +20,7 @@ public class Member implements Serializable {
         this.lastName = lAsT_nAmE;
         this.firstName = fIrSt_nAmE;
         this.emailAddress = eMaIl_aDdReSs;
-        this.PhOnE_NuMbEr = pHoNe_nUmBeR;
+        this.phoneNumber = pHoNe_nUmBeR;
         this.MeMbEr_Id = mEmBeR_iD;
         this.cUrReNt_lOaNs = new HashMap<>();
     }
@@ -30,7 +30,7 @@ public class Member implements Serializable {
         sb.append("Member:  ").append(MeMbEr_Id).append("\n")
                 .append("  Name:  ").append(lastName).append(", ").append(firstName).append("\n")
                 .append("  Email: ").append(emailAddress).append("\n")
-                .append("  Phone: ").append(PhOnE_NuMbEr)
+                .append("  Phone: ").append(phoneNumber)
                 .append("\n")
                 .append(String.format("  Fines Owed :  $%.2f", FiNeS_OwInG))
                 .append("\n");
