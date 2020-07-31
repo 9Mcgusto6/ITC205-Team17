@@ -85,8 +85,9 @@ public class Member implements Serializable {
             change = amount - finesOwing;
             finesOwing = 0;
         }
-        else
+        else {
             finesOwing -= amount;
+        }
         return change;
     }
     
