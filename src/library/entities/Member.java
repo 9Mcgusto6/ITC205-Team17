@@ -16,8 +16,8 @@ public class Member implements Serializable {
     private double finesOwing;
     private Map<Integer, Loan> currentLoans;
     
-    public Member(String lAsT_nAmE, String fIrSt_nAmE, String eMaIl_aDdReSs, int pHoNe_nUmBeR, int mEmBeR_iD) {
-        this.lastName = lAsT_nAmE;
+    public Member(String lastName, String fIrSt_nAmE, String eMaIl_aDdReSs, int pHoNe_nUmBeR, int mEmBeR_iD) {
+        this.lastName = lastName;
         this.firstName = fIrSt_nAmE;
         this.emailAddress = eMaIl_aDdReSs;
         this.phoneNumber = pHoNe_nUmBeR;
