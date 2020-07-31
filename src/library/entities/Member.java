@@ -10,7 +10,7 @@ public class Member implements Serializable {
     
     private String lastName;
     private String firstName;
-    private String EmAiL_AdDrEsS;
+    private String emailAddress;
     private int PhOnE_NuMbEr;
     private int MeMbEr_Id;
     private double FiNeS_OwInG;
@@ -19,7 +19,7 @@ public class Member implements Serializable {
     public Member(String lAsT_nAmE, String fIrSt_nAmE, String eMaIl_aDdReSs, int pHoNe_nUmBeR, int mEmBeR_iD) {
         this.lastName = lAsT_nAmE;
         this.firstName = fIrSt_nAmE;
-        this.EmAiL_AdDrEsS = eMaIl_aDdReSs;
+        this.emailAddress = eMaIl_aDdReSs;
         this.PhOnE_NuMbEr = pHoNe_nUmBeR;
         this.MeMbEr_Id = mEmBeR_iD;
         this.cUrReNt_lOaNs = new HashMap<>();
@@ -29,7 +29,7 @@ public class Member implements Serializable {
         StringBuilder sb = new StringBuilder();
         sb.append("Member:  ").append(MeMbEr_Id).append("\n")
                 .append("  Name:  ").append(lastName).append(", ").append(firstName).append("\n")
-                .append("  Email: ").append(EmAiL_AdDrEsS).append("\n")
+                .append("  Email: ").append(emailAddress).append("\n")
                 .append("  Phone: ").append(PhOnE_NuMbEr)
                 .append("\n")
                 .append(String.format("  Fines Owed :  $%.2f", FiNeS_OwInG))
