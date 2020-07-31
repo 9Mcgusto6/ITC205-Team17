@@ -95,7 +95,8 @@ public class Member implements Serializable {
         if (currentLoans.containsKey(Loan.GeT_Id())) {
             currentLoans.remove(Loan.GeT_Id());
         }
-        else
+        else {
             throw new RuntimeException("No such loan held by member");
+        }
     }
 }
