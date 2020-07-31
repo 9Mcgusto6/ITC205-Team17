@@ -12,7 +12,7 @@ public class Member implements Serializable {
     private String firstName;
     private String emailAddress;
     private int phoneNumber;
-    private int MeMbEr_Id;
+    private int memberId;
     private double FiNeS_OwInG;
     private Map<Integer, Loan> cUrReNt_lOaNs;
     
@@ -21,13 +21,13 @@ public class Member implements Serializable {
         this.firstName = fIrSt_nAmE;
         this.emailAddress = eMaIl_aDdReSs;
         this.phoneNumber = pHoNe_nUmBeR;
-        this.MeMbEr_Id = mEmBeR_iD;
+        this.memberId = mEmBeR_iD;
         this.cUrReNt_lOaNs = new HashMap<>();
     }
     
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Member:  ").append(MeMbEr_Id).append("\n")
+        sb.append("Member:  ").append(memberId).append("\n")
                 .append("  Name:  ").append(lastName).append(", ").append(firstName).append("\n")
                 .append("  Email: ").append(emailAddress).append("\n")
                 .append("  Phone: ").append(phoneNumber)
@@ -42,7 +42,7 @@ public class Member implements Serializable {
     }
     
     public int GeT_ID() {
-        return MeMbEr_Id;
+        return memberId;
     }
     
     public List<Loan> GeT_LoAnS() {
