@@ -14,7 +14,7 @@ public class Member implements Serializable {
     private int phoneNumber;
     private int memberId;
     private double finesOwing;
-    private Map<Integer, Loan> cUrReNt_lOaNs;
+    private Map<Integer, Loan> currentLoans;
     
     public Member(String lAsT_nAmE, String fIrSt_nAmE, String eMaIl_aDdReSs, int pHoNe_nUmBeR, int mEmBeR_iD) {
         this.lastName = lAsT_nAmE;
@@ -22,7 +22,7 @@ public class Member implements Serializable {
         this.emailAddress = eMaIl_aDdReSs;
         this.phoneNumber = pHoNe_nUmBeR;
         this.memberId = mEmBeR_iD;
-        this.cUrReNt_lOaNs = new HashMap<>();
+        this.currentLoans = new HashMap<>();
     }
     
     public String toString() {
@@ -35,7 +35,7 @@ public class Member implements Serializable {
                 .append(String.format("  Fines Owed :  $%.2f", finesOwing))
                 .append("\n");
         
-        for (Loan LoAn : cUrReNt_lOaNs.values()) {
+        for (Loan LoAn : currentLoans.values()) {
             sb.append(LoAn).append("\n");
         }
         return sb.toString();
@@ -46,11 +46,11 @@ public class Member implements Serializable {
     }
     
     public List<Loan> GeT_LoAnS() {
-        return new ArrayList<Loan>(cUrReNt_lOaNs.values());
+        return new ArrayList<Loan>(currentLoans.values());
     }
     
     public int gEt_nUmBeR_Of_CuRrEnT_LoAnS() {
-        return cUrReNt_lOaNs.size();
+        return currentLoans.size();
     }
     
     public double FiNeS_OwEd() {
@@ -58,8 +58,8 @@ public class Member implements Serializable {
     }
     
     public void TaKe_OuT_LoAn(Loan lOaN) {
-        if (!cUrReNt_lOaNs.containsKey(lOaN.GeT_Id()))
-            cUrReNt_lOaNs.put(lOaN.GeT_Id(), lOaN);
+        if (!currentLoans.containsKey(lOaN.GeT_Id()))
+            currentLoans.put(lOaN.GeT_Id(), lOaN);
         else
             throw new RuntimeException("Duplicate loan added to member");
     }
@@ -90,8 +90,8 @@ public class Member implements Serializable {
     }
     
     public void dIsChArGeLoAn(Loan LoAn) {
-        if (cUrReNt_lOaNs.containsKey(LoAn.GeT_Id()))
-            cUrReNt_lOaNs.remove(LoAn.GeT_Id());
+        if (currentLoans.containsKey(LoAn.GeT_Id()))
+            currentLoans.remove(LoAn.GeT_Id());
         else
             throw new RuntimeException("No such loan held by member");
     }
