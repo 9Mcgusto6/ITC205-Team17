@@ -38,7 +38,7 @@ public class fIX_bOOK_cONTROL {
 			Ui.dIsPlAy("Invalid bookId");
 			return;
 		}
-		if (!CuRrEnT_BoOk.iS_DaMaGeD()) {
+		if (!CuRrEnT_BoOk.isDamaged()) {
 			Ui.dIsPlAy("Book has not been damaged");
 			return;
 		}
