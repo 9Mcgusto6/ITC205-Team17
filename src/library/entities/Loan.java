@@ -11,7 +11,7 @@ public class Loan implements Serializable {
 	private int loanId;
 	private Book book;
 	private Member member;
-	private Date DaTe;
+	private Date date;
 	private lOaN_sTaTe StAtE;
 
 	
@@ -19,14 +19,14 @@ public class Loan implements Serializable {
 		this.loanId = loanId;
 		this.book = bOoK;
 		this.member = mEmBeR;
-		this.DaTe = DuE_dAtE;
+		this.date = DuE_dAtE;
 		this.StAtE = lOaN_sTaTe.CURRENT;
 	}
 
 	
 	public void cHeCk_OvEr_DuE() {
 		if (StAtE == lOaN_sTaTe.CURRENT &&
-			Calendar.gEtInStAnCe().gEt_DaTe().after(DaTe)) 
+			Calendar.gEtInStAnCe().gEt_DaTe().after(date)) 
 			this.StAtE = lOaN_sTaTe.OVER_DUE;			
 		
 	}
@@ -43,7 +43,7 @@ public class Loan implements Serializable {
 
 
 	public Date GeT_DuE_DaTe() {
-		return DaTe;
+		return date;
 	}
 	
 	
@@ -56,7 +56,7 @@ public class Loan implements Serializable {
 		  .append(member.GeT_LaSt_NaMe()).append(", ").append(member.GeT_FiRsT_NaMe()).append("\n")
 		  .append("  Book ").append(book.getId()).append(" : " )
 		  .append(book.getTitle()).append("\n")
-		  .append("  DueDate: ").append(sdf.format(DaTe)).append("\n")
+		  .append("  DueDate: ").append(sdf.format(date)).append("\n")
 		  .append("  State: ").append(StAtE);		
 		return sb.toString();
 	}
