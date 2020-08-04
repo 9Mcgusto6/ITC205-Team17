@@ -84,7 +84,7 @@ public class Book implements Serializable {
 	}
 
 	
-	public void RePaIr() {
+	public void canRepair() {
 		if (state.equals(State.DAMAGED)) 
 			state = State.AVAILABLE;
 		

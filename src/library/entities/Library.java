@@ -233,7 +233,7 @@ public class Library implements Serializable {
 
 	public void RePaIr_BoOk(Book cUrReNt_BoOk) {
 		if (DaMaGeD_BoOkS.containsKey(cUrReNt_BoOk.getId())) {
-			cUrReNt_BoOk.RePaIr();
+			cUrReNt_BoOk.canRepair();
 			DaMaGeD_BoOkS.remove(cUrReNt_BoOk.getId());
 		}
 		else 
