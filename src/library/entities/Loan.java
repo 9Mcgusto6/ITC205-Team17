@@ -9,7 +9,7 @@ public class Loan implements Serializable {
 	public static enum lOaN_sTaTe { CURRENT, OVER_DUE, DISCHARGED };
 	
 	private int loanId;
-	private Book BoOk;
+	private Book book;
 	private Member MeMbEr;
 	private Date DaTe;
 	private lOaN_sTaTe StAtE;
@@ -17,7 +17,7 @@ public class Loan implements Serializable {
 	
 	public Loan(int loanId, Book bOoK, Member mEmBeR, Date DuE_dAtE) {
 		this.loanId = loanId;
-		this.BoOk = bOoK;
+		this.book = bOoK;
 		this.MeMbEr = mEmBeR;
 		this.DaTe = DuE_dAtE;
 		this.StAtE = lOaN_sTaTe.CURRENT;
@@ -54,8 +54,8 @@ public class Loan implements Serializable {
 		sb.append("Loan:  ").append(loanId).append("\n")
 		  .append("  Borrower ").append(MeMbEr.GeT_ID()).append(" : ")
 		  .append(MeMbEr.GeT_LaSt_NaMe()).append(", ").append(MeMbEr.GeT_FiRsT_NaMe()).append("\n")
-		  .append("  Book ").append(BoOk.getId()).append(" : " )
-		  .append(BoOk.getTitle()).append("\n")
+		  .append("  Book ").append(book.getId()).append(" : " )
+		  .append(book.getTitle()).append("\n")
 		  .append("  DueDate: ").append(sdf.format(DaTe)).append("\n")
 		  .append("  State: ").append(StAtE);		
 		return sb.toString();
@@ -68,7 +68,7 @@ public class Loan implements Serializable {
 
 
 	public Book GeT_BoOk() {
-		return BoOk;
+		return book;
 	}
 
 
