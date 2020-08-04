@@ -12,7 +12,7 @@ public class Loan implements Serializable {
 	private Book book;
 	private Member member;
 	private Date date;
-	private lOaN_sTaTe StAtE;
+	private lOaN_sTaTe state;
 
 	
 	public Loan(int loanId, Book bOoK, Member mEmBeR, Date DuE_dAtE) {
@@ -20,20 +20,20 @@ public class Loan implements Serializable {
 		this.book = bOoK;
 		this.member = mEmBeR;
 		this.date = DuE_dAtE;
-		this.StAtE = lOaN_sTaTe.CURRENT;
+		this.state = lOaN_sTaTe.CURRENT;
 	}
 
 	
 	public void cHeCk_OvEr_DuE() {
-		if (StAtE == lOaN_sTaTe.CURRENT &&
+		if (state == lOaN_sTaTe.CURRENT &&
 			Calendar.gEtInStAnCe().gEt_DaTe().after(date)) 
-			this.StAtE = lOaN_sTaTe.OVER_DUE;			
+			this.state = lOaN_sTaTe.OVER_DUE;			
 		
 	}
 
 	
 	public boolean Is_OvEr_DuE() {
-		return StAtE == lOaN_sTaTe.OVER_DUE;
+		return state == lOaN_sTaTe.OVER_DUE;
 	}
 
 	
@@ -57,7 +57,7 @@ public class Loan implements Serializable {
 		  .append("  Book ").append(book.getId()).append(" : " )
 		  .append(book.getTitle()).append("\n")
 		  .append("  DueDate: ").append(sdf.format(date)).append("\n")
-		  .append("  State: ").append(StAtE);		
+		  .append("  State: ").append(state);		
 		return sb.toString();
 	}
 
@@ -73,7 +73,7 @@ public class Loan implements Serializable {
 
 
 	public void DiScHaRgE() {
-		StAtE = lOaN_sTaTe.DISCHARGED;		
+		state = lOaN_sTaTe.DISCHARGED;		
 	}
 
 }
