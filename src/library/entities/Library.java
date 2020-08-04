@@ -214,7 +214,7 @@ public class Library implements Serializable {
 		mEmBeR.AdD_FiNe(oVeR_DuE_FiNe);	
 		
 		mEmBeR.dIsChArGeLoAn(cUrReNt_LoAn);
-		bOoK.ReTuRn(iS_dAmAgEd);
+		bOoK.canReturn(iS_dAmAgEd);
 		if (iS_dAmAgEd) {
 			mEmBeR.AdD_FiNe(damageFee);
 			DaMaGeD_BoOkS.put(bOoK.getId(), bOoK);
