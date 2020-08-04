@@ -8,7 +8,7 @@ public class Loan implements Serializable {
 	
 	public static enum lOaN_sTaTe { CURRENT, OVER_DUE, DISCHARGED };
 	
-	private int LoAn_Id;
+	private int loanId;
 	private Book BoOk;
 	private Member MeMbEr;
 	private Date DaTe;
@@ -16,7 +16,7 @@ public class Loan implements Serializable {
 
 	
 	public Loan(int loanId, Book bOoK, Member mEmBeR, Date DuE_dAtE) {
-		this.LoAn_Id = loanId;
+		this.loanId = loanId;
 		this.BoOk = bOoK;
 		this.MeMbEr = mEmBeR;
 		this.DaTe = DuE_dAtE;
@@ -38,7 +38,7 @@ public class Loan implements Serializable {
 
 	
 	public Integer GeT_Id() {
-		return LoAn_Id;
+		return loanId;
 	}
 
 
@@ -51,7 +51,7 @@ public class Loan implements Serializable {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 		StringBuilder sb = new StringBuilder();
-		sb.append("Loan:  ").append(LoAn_Id).append("\n")
+		sb.append("Loan:  ").append(loanId).append("\n")
 		  .append("  Borrower ").append(MeMbEr.GeT_ID()).append(" : ")
 		  .append(MeMbEr.GeT_LaSt_NaMe()).append(", ").append(MeMbEr.GeT_FiRsT_NaMe()).append("\n")
 		  .append("  Book ").append(BoOk.getId()).append(" : " )
