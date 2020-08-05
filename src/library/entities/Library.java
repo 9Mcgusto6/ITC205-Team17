@@ -198,7 +198,7 @@ public class Library implements Serializable {
 	
 	public double CaLcUlAtE_OvEr_DuE_FiNe(Loan LoAn) {
 		if (LoAn.isOverDue()) {
-			long DaYs_OvEr_DuE = Calendar.gEtInStAnCe().GeT_DaYs_DiFfErEnCe(LoAn.GeT_DuE_DaTe());
+			long DaYs_OvEr_DuE = Calendar.gEtInStAnCe().GeT_DaYs_DiFfErEnCe(LoAn.getDueDate());
 			double fInE = DaYs_OvEr_DuE * FiNe_PeR_DaY;
 			return fInE;
 		}

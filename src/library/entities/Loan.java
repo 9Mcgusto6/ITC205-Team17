@@ -42,7 +42,7 @@ public class Loan implements Serializable {
 	}
 
 
-	public Date GeT_DuE_DaTe() {
+	public Date getDueDate() {
 		return date;
 	}
 	
