@@ -165,7 +165,7 @@ public class Library implements Serializable {
 			return false;
 				
 		for (Loan loan : member.GeT_LoAnS()) 
-			if (loan.Is_OvEr_DuE()) 
+			if (loan.isOverDue()) 
 				return false;
 			
 		return true;
@@ -197,7 +197,7 @@ public class Library implements Serializable {
 
 	
 	public double CaLcUlAtE_OvEr_DuE_FiNe(Loan LoAn) {
-		if (LoAn.Is_OvEr_DuE()) {
+		if (LoAn.isOverDue()) {
 			long DaYs_OvEr_DuE = Calendar.gEtInStAnCe().GeT_DaYs_DiFfErEnCe(LoAn.GeT_DuE_DaTe());
 			double fInE = DaYs_OvEr_DuE * FiNe_PeR_DaY;
 			return fInE;
