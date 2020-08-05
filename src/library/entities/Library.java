@@ -63,7 +63,9 @@ public class Library implements Serializable {
 					throw new RuntimeException(e);
 				}
 			}
-			else self = new Library();
+			else {
+				self = new Library();
+			}
 		}
 		return self;
 	}
@@ -168,10 +170,11 @@ public class Library implements Serializable {
 			return false;
 		} //Added curly brackets
 				
-		for (Loan loan : member.getLoans()) //Changed GeT_LoAnS to getLoans according to method in Member
+		for (Loan loan : member.getLoans()) { //Changed GeT_LoAnS to getLoans according to method in Member
 			if (loan.Is_OvEr_DuE()) {
 				return false;
-			} //Added curly brackets	
+			} //Added curly brackets
+		} //Added curly brackets	
 		return true;
 	}
 
@@ -229,8 +232,9 @@ public class Library implements Serializable {
 
 	
 	public void checkCurrentLoans() { //Changed cHeCk_CuRrEnT_LoAnS to checkCurrentLoans
-		for (Loan loan : currentLoans.values()) //Changed lOaN to loan
+		for (Loan loan : currentLoans.values()) { //Changed lOaN to loan
 			loan.cHeCk_OvEr_DuE();			
+		} //Added curly brackets
 	}
 
 	
