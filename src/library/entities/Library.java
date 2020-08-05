@@ -207,7 +207,7 @@ public class Library implements Serializable {
 
 
 	public void DiScHaRgE_LoAn(Loan cUrReNt_LoAn, boolean iS_dAmAgEd) {
-		Member mEmBeR = cUrReNt_LoAn.GeT_MeMbEr();
+		Member mEmBeR = cUrReNt_LoAn.getMember();
 		Book bOoK  = cUrReNt_LoAn.GeT_BoOk();
 		
 		double oVeR_DuE_FiNe = CaLcUlAtE_OvEr_DuE_FiNe(cUrReNt_LoAn);
