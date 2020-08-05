@@ -182,7 +182,7 @@ public class Library implements Serializable {
 		Loan loan = new Loan(gEt_NeXt_LoAn_Id(), book, member, dueDate);
 		member.TaKe_OuT_LoAn(loan);
 		book.canBorrow();
-		LoAnS.put(loan.GeT_Id(), loan);
+		LoAnS.put(loan.getId(), loan);
 		CuRrEnT_LoAnS.put(book.getId(), loan);
 		return loan;
 	}
