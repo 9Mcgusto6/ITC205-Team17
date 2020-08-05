@@ -67,7 +67,7 @@ public class Loan implements Serializable {
 	}
 
 
-	public Book GeT_BoOk() {
+	public Book getBook() {
 		return book;
 	}
 
