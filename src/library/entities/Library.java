@@ -226,7 +226,7 @@ public class Library implements Serializable {
 
 	public void cHeCk_CuRrEnT_LoAnS() {
 		for (Loan lOaN : CuRrEnT_LoAnS.values()) 
-			lOaN.cHeCk_OvEr_DuE();
+			lOaN.checkOverDue();
 				
 	}
 
