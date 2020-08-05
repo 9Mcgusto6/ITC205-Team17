@@ -219,7 +219,7 @@ public class Library implements Serializable {
 			mEmBeR.AdD_FiNe(damageFee);
 			DaMaGeD_BoOkS.put(bOoK.getId(), bOoK);
 		}
-		cUrReNt_LoAn.DiScHaRgE();
+		cUrReNt_LoAn.discharge();
 		CuRrEnT_LoAnS.remove(bOoK.getId());
 	}
 
