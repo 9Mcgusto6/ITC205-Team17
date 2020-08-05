@@ -22,7 +22,7 @@ public class bORROW_bOOK_cONTROL {
 	
 	
 	public bORROW_bOOK_cONTROL() {
-		this.lIbRaRy = Library.GeTiNsTaNcE();
+		this.lIbRaRy = Library.getInstance();
 		sTaTe = CONTROL_STATE.INITIALISED;
 	}
 	
@@ -41,12 +41,12 @@ public class bORROW_bOOK_cONTROL {
 		if (!sTaTe.equals(CONTROL_STATE.READY)) 
 			throw new RuntimeException("BorrowBookControl: cannot call cardSwiped except in READY state");
 			
-		mEmBeR = lIbRaRy.gEt_MeMbEr(mEmBeR_Id);
+		mEmBeR = lIbRaRy.getMember(mEmBeR_Id);
 		if (mEmBeR == null) {
 			uI.DiSpLaY("Invalid memberId");
 			return;
 		}
-		if (lIbRaRy.cAn_MeMbEr_BoRrOw(mEmBeR)) {
+		if (lIbRaRy.canMemberBorrow(mEmBeR)) {
 			pEnDiNg_LiSt = new ArrayList<>();
 			uI.SeT_StAtE(BorrowBookUI.uI_STaTe.SCANNING);
 			sTaTe = CONTROL_STATE.SCANNING; 
@@ -63,7 +63,7 @@ public class bORROW_bOOK_cONTROL {
 		if (!sTaTe.equals(CONTROL_STATE.SCANNING)) 
 			throw new RuntimeException("BorrowBookControl: cannot call bookScanned except in SCANNING state");
 			
-		bOoK = lIbRaRy.gEt_BoOk(bOoKiD);
+		bOoK = lIbRaRy.getBook(bOoKiD);
 		if (bOoK == null) {
 			uI.DiSpLaY("Invalid bookId");
 			return;
@@ -76,7 +76,7 @@ public class bORROW_bOOK_cONTROL {
 		for (Book B : pEnDiNg_LiSt) 
 			uI.DiSpLaY(B.toString());
 		
-		if (lIbRaRy.gEt_NuMbEr_Of_LoAnS_ReMaInInG_FoR_MeMbEr(mEmBeR) - pEnDiNg_LiSt.size() == 0) {
+		if (lIbRaRy.getNumberOfLoansRemaining(mEmBeR) - pEnDiNg_LiSt.size() == 0) {
 			uI.DiSpLaY("Loan limit reached");
 			CoMpLeTe();
 		}
@@ -104,7 +104,7 @@ public class bORROW_bOOK_cONTROL {
 			throw new RuntimeException("BorrowBookControl: cannot call commitLoans except in FINALISING state");
 			
 		for (Book B : pEnDiNg_LiSt) {
-			Loan lOaN = lIbRaRy.iSsUe_LoAn(B, mEmBeR);
+			Loan lOaN = lIbRaRy.issueLoan(B, mEmBeR);
 			cOmPlEtEd_LiSt.add(lOaN);			
 		}
 		uI.DiSpLaY("Completed Loan Slip");
