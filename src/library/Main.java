@@ -55,15 +55,15 @@ public class Main {
 	public static void main(String[] args) {		
 		try {			
 			IN = new Scanner(System.in);
-			LIB = Library.GeTiNsTaNcE();
+			LIB = Library.getInstance();
 			CAL = Calendar.getInstance();
 			SDF = new SimpleDateFormat("dd/MM/yyyy");
 	
-			for (Member m : LIB.lIsT_MeMbErS()) {
+			for (Member m : LIB.listMembers()) {
 				output(m);
 			}
 			output(" ");
-			for (Book b : LIB.lIsT_BoOkS()) {
+			for (Book b : LIB.listBooks()) {
 				output(b);
 			}
 						
@@ -127,7 +127,7 @@ public class Main {
 					break;
 				}
 				
-				Library.SaVe();
+				Library.save();
 			}			
 		} catch (RuntimeException e) {
 			output(e);
@@ -143,7 +143,7 @@ public class Main {
 
 	private static void LIST_CURRENT_LOANS() {
 		output("");
-		for (Loan loan : LIB.lISt_CuRrEnT_LoAnS()) {
+		for (Loan loan : LIB.listCurrentLoans()) {
 			output(loan + "\n");
 		}		
 	}
@@ -152,7 +152,7 @@ public class Main {
 
 	private static void LIST_BOOKS() {
 		output("");
-		for (Book book : LIB.lIsT_BoOkS()) {
+		for (Book book : LIB.listBooks()) {
 			output(book + "\n");
 		}		
 	}
@@ -161,7 +161,7 @@ public class Main {
 
 	private static void LIST_MEMBERS() {
 		output("");
-		for (Member member : LIB.lIsT_MeMbErS()) {
+		for (Member member : LIB.listMembers()) {
 			output(member + "\n");
 		}		
 	}
@@ -187,7 +187,7 @@ public class Main {
 		try {
 			int days = Integer.valueOf(input("Enter number of days: ")).intValue();
 			CAL.incrementDate(days);
-			LIB.cHeCk_CuRrEnT_LoAnS();
+			LIB.checkCurrentLoans();
 			output(SDF.format(CAL.getDate()));
 			
 		} catch (NumberFormatException e) {
@@ -201,7 +201,7 @@ public class Main {
 		String AuThOr = input("Enter author: ");
 		String TiTlE  = input("Enter title: ");
 		String CaLl_NuMbEr = input("Enter call number: ");
-		Book BoOk = LIB.aDd_BoOk(AuThOr, TiTlE, CaLl_NuMbEr);
+		Book BoOk = LIB.addBook(AuThOr, TiTlE, CaLl_NuMbEr);
 		output("\n" + BoOk + "\n");
 		
 	}
@@ -213,7 +213,7 @@ public class Main {
 			String FiRsT_NaMe  = input("Enter first name: ");
 			String EmAiL_AdDrEsS = input("Enter email address: ");
 			int PhOnE_NuMbEr = Integer.valueOf(input("Enter phone number: ")).intValue();
-			Member MeMbEr = LIB.aDd_MeMbEr(LaSt_NaMe, FiRsT_NaMe, EmAiL_AdDrEsS, PhOnE_NuMbEr);
+			Member MeMbEr = LIB.addMember(LaSt_NaMe, FiRsT_NaMe, EmAiL_AdDrEsS, PhOnE_NuMbEr);
 			output("\n" + MeMbEr + "\n");
 			
 		} catch (NumberFormatException e) {
