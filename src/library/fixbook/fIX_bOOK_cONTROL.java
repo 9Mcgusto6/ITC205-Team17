@@ -13,7 +13,7 @@ public class fIX_bOOK_cONTROL {
 
 
 	public fIX_bOOK_cONTROL() {
-		this.LiBrArY = Library.GeTiNsTaNcE();
+		this.LiBrArY = Library.getInstance();
 		StAtE = CoNtRoL_StAtE.INITIALISED;
 	}
 	
@@ -32,13 +32,13 @@ public class fIX_bOOK_cONTROL {
 		if (!StAtE.equals(CoNtRoL_StAtE.READY)) 
 			throw new RuntimeException("FixBookControl: cannot call bookScanned except in READY state");
 			
-		CuRrEnT_BoOk = LiBrArY.gEt_BoOk(BoOkId);
+		CuRrEnT_BoOk = LiBrArY.getBook(BoOkId);
 		
 		if (CuRrEnT_BoOk == null) {
 			Ui.dIsPlAy("Invalid bookId");
 			return;
 		}
-		if (!CuRrEnT_BoOk.iS_DaMaGeD()) {
+		if (!CuRrEnT_BoOk.isDamaged()) {
 			Ui.dIsPlAy("Book has not been damaged");
 			return;
 		}
@@ -53,7 +53,7 @@ public class fIX_bOOK_cONTROL {
 			throw new RuntimeException("FixBookControl: cannot call fixBook except in FIXING state");
 			
 		if (mUsT_FiX) 
-			LiBrArY.RePaIr_BoOk(CuRrEnT_BoOk);
+			LiBrArY.repairBook(CuRrEnT_BoOk);
 		
 		CuRrEnT_BoOk = null;
 		Ui.SeT_StAtE(FixBookUI.uI_sTaTe.READY);
