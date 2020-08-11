@@ -11,7 +11,6 @@ public class fIX_bOOK_cONTROL {
 	private Library LiBrArY;
 	private Book CuRrEnT_BoOk;
 
-
 	public fIX_bOOK_cONTROL() {
 		this.LiBrArY = Library.getInstance();
 		StAtE = CoNtRoL_StAtE.INITIALISED;

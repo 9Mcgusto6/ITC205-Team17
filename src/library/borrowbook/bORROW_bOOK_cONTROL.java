@@ -20,7 +20,6 @@ public class bORROW_bOOK_cONTROL {
 	private List<Loan> cOmPlEtEd_LiSt;
 	private Book bOoK;
 	
-	
 	public bORROW_bOOK_cONTROL() {
 		this.lIbRaRy = Library.getInstance();
 		sTaTe = CONTROL_STATE.INITIALISED;

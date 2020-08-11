@@ -85,7 +85,6 @@ public class Library implements Serializable {
 		}
 	}
 
-	
 	public int getBookId() { //Changed gEt_BoOkId to getBookId
 		return bookId;
 	}
@@ -132,6 +131,7 @@ public class Library implements Serializable {
 		return member;
 	}
 
+
 	public Book addBook(String a, String t, String c) {	//Changed aDd_BoOk to addBook	
 		Book b = new Book(a, t, c, getNextBookId());
 		catalog.put(b.getId(), b);		
@@ -154,7 +154,6 @@ public class Library implements Serializable {
 		return null;
 	}
 
-	
 	public int getLoanLimit() { //Changed gEt_LoAn_LiMiT to getLoanLimit
 		return LOAN_LIMIT;
 	}
@@ -178,7 +177,6 @@ public class Library implements Serializable {
 		return true;
 	}
 
-	
 	public int getNumberOfLoansRemaining(Member member) {		//Changed gEt_NuMbEr_Of_LoAnS_ReMaInInG_FoR_MeMbEr to getNumberOfLoansRemaining, changed MeMbEr to member
 		return LOAN_LIMIT - member.getNumberOfCurrentLoans();
 	}
@@ -217,7 +215,6 @@ public class Library implements Serializable {
 	public void dischargeLoan(Loan currentLoan, boolean isDamaged) { //Changed DiScHaRgE_LoAn to dischargeLoan, cUrReNt_LoAn to currentLoan, iS_dAmAgEd to isDamaged
 		Member member = currentLoan.getMember(); //Changed mEmBeR to member
 		Book book  = currentLoan.getBook(); //Changed bOoK to book
-
 		
 		double overdueFine = calculateOverdueFine(currentLoan); //Changed oVeR_DuE_FiNe to overdueFine
 		member.addFine(overdueFine);	//Changed AdD_FiNe to addFine according to method in Member

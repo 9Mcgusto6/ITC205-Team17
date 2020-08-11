@@ -34,7 +34,6 @@ public class rETURN_bOOK_cONTROL {
 			throw new RuntimeException("ReturnBookControl: cannot call bookScanned except in READY state");
 		
 		Book cUrReNt_bOoK = lIbRaRy.getBook(bOoK_iD);
-		
 		if (cUrReNt_bOoK == null) {
 			Ui.DiSpLaY("Invalid Book Id");
 			return;
