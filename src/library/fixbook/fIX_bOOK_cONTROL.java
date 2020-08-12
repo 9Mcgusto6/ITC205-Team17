@@ -11,7 +11,6 @@ public class fIX_bOOK_cONTROL {
 	private Library LiBrArY;
 	private Book CuRrEnT_BoOk;
 
-
 	public fIX_bOOK_cONTROL() {
 		this.LiBrArY = Library.getInstance();
 		StAtE = CoNtRoL_StAtE.INITIALISED;
@@ -38,7 +37,7 @@ public class fIX_bOOK_cONTROL {
 			Ui.dIsPlAy("Invalid bookId");
 			return;
 		}
-		if (!CuRrEnT_BoOk.iS_DaMaGeD()) {
+		if (!CuRrEnT_BoOk.isDamaged()) {
 			Ui.dIsPlAy("Book has not been damaged");
 			return;
 		}

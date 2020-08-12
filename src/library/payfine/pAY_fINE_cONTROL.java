@@ -13,6 +13,7 @@ public class pAY_fINE_cONTROL {
 
 
 	public pAY_fINE_cONTROL() {
+
 		this.LiBrArY = Library.getInstance();
 		StAtE = cOnTrOl_sTaTe.INITIALISED;
 	}
@@ -31,7 +32,7 @@ public class pAY_fINE_cONTROL {
 	public void CaRd_sWiPeD(int MeMbEr_Id) {
 		if (!StAtE.equals(cOnTrOl_sTaTe.READY)) 
 			throw new RuntimeException("PayFineControl: cannot call cardSwiped except in READY state");
-			
+
 		MeMbEr = LiBrArY.getMember(MeMbEr_Id);
 		
 		if (MeMbEr == null) {
