@@ -10,7 +10,7 @@ import library.entities.Library;
 import library.entities.Loan;
 import library.entities.Member;
 import library.fixbook.FixBookUI;
-import library.fixbook.fIX_bOOK_cONTROL;
+import library.fixbook.FixBookControl;
 import library.payfine.PayFineUI;
 import library.payfine.pAY_fINE_cONTROL;
 import library.returnBook.ReturnBookUI;
@@ -179,7 +179,7 @@ public class Main {
 
 
 	private static void FIX_BOOKS() {
-		new FixBookUI(new fIX_bOOK_cONTROL()).RuN();		
+		new FixBookUI(new FixBookControl()).RuN();		
 	}
 
 
