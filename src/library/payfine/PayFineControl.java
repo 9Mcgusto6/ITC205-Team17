@@ -24,10 +24,10 @@ public class PayFineControl {
         state = ControlState.READY;
     }
     
-    public void cardSwiped(int MeMbEr_Id) {
+    public void cardSwiped(int memberId) {
         if (!state.equals(ControlState.READY))
             throw new RuntimeException("PayFineControl: cannot call cardSwiped except in READY state");
-        member = library.getMember(MeMbEr_Id);
+        member = library.getMember(memberId);
         if (member == null) {
             UI.DiSplAY("Invalid Member Id");
             return;
