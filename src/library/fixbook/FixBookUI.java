@@ -24,12 +24,12 @@ public class FixBookUI {
         while (true) {
             switch (state) {
                 case READY:
-                    String BoOk_EnTrY_StRiNg = iNpUt("Scan Book (<enter> completes): ");
-                    if (BoOk_EnTrY_StRiNg.length() == 0)
+                    String bookEntryString = iNpUt("Scan Book (<enter> completes): ");
+                    if (bookEntryString.length() == 0)
                         control.SCannING_COMplete();
                     else {
                         try {
-                            int BoOk_Id = Integer.valueOf(BoOk_EnTrY_StRiNg).intValue();
+                            int BoOk_Id = Integer.valueOf(bookEntryString).intValue();
                             control.BoOk_ScAnNeD(BoOk_Id);
                         }
                         catch (NumberFormatException e) {
