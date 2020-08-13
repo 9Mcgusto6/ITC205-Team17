@@ -12,7 +12,7 @@ public class PayFineUI {
         this.control = control;
         input = new Scanner(System.in);
         state = UI_STATE.INITIALISED;
-        control.SeT_uI(this);
+        control.setUI(this);
     }
     
     public void SeT_StAtE(UI_STATE state) {
