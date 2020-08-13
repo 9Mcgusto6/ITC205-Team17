@@ -76,7 +76,7 @@ public class PayFineUI {
         System.out.println(object);
     }
     
-    public void DiSplAY(Object object) {
+    public void displayOutput(Object object) {
         output(object);
     }
 }
