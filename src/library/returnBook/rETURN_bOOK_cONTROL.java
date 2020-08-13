@@ -9,12 +9,12 @@ public class rETURN_bOOK_cONTROL {
 	private enum ControlState {INITIALISED, READY, INSPECTING};
 	private ControlState state;
 	
-	private Library lIbRaRy;
+	private Library library;
 	private Loan CurrENT_loan;
 	
 
 	public rETURN_bOOK_cONTROL() {
-		this.lIbRaRy = Library.getInstance();
+		this.library = Library.getInstance();
 		state = ControlState.INITIALISED;
 	}
 	
@@ -33,7 +33,7 @@ public class rETURN_bOOK_cONTROL {
 		if (!state.equals(ControlState.READY)) 
 			throw new RuntimeException("ReturnBookControl: cannot call bookScanned except in READY state");
 		
-		Book cUrReNt_bOoK = lIbRaRy.getBook(bOoK_iD);
+		Book cUrReNt_bOoK = library.getBook(bOoK_iD);
 		if (cUrReNt_bOoK == null) {
 			Ui.DiSpLaY("Invalid Book Id");
 			return;
@@ -42,11 +42,11 @@ public class rETURN_bOOK_cONTROL {
 			Ui.DiSpLaY("Book has not been borrowed");
 			return;
 		}		
-		CurrENT_loan = lIbRaRy.getLoanByBookId(bOoK_iD);	
+		CurrENT_loan = library.getLoanByBookId(bOoK_iD);	
 		double Over_Due_Fine = 0.0;
 
 		if (CurrENT_loan.isOverDue()) 
-			Over_Due_Fine = lIbRaRy.calculateOverdueFine(CurrENT_loan);
+			Over_Due_Fine = library.calculateOverdueFine(CurrENT_loan);
 		
 		Ui.DiSpLaY("Inspecting");
 		Ui.DiSpLaY(cUrReNt_bOoK.toString());
@@ -72,7 +72,7 @@ public class rETURN_bOOK_cONTROL {
 		if (!state.equals(ControlState.INSPECTING)) 
 			throw new RuntimeException("ReturnBookControl: cannot call dischargeLoan except in INSPECTING state");
 		
-		lIbRaRy.dischargeLoan(CurrENT_loan, iS_dAmAgEd);
+		library.dischargeLoan(CurrENT_loan, iS_dAmAgEd);
 		CurrENT_loan = null;
 		Ui.sEt_sTaTe(ReturnBookUI.uI_sTaTe.READY);
 		state = ControlState.READY;				
