@@ -19,12 +19,12 @@ public class rETURN_bOOK_cONTROL {
 	}
 	
 	
-	public void sEt_uI(ReturnBookUI uI) {
+	public void sEt_uI(ReturnBookUI ui) {
 		if (!state.equals(ControlState.INITIALISED)) 
 			throw new RuntimeException("ReturnBookControl: cannot call setUI except in INITIALISED state");
 		
-		this.Ui = uI;
-		uI.sEt_sTaTe(ReturnBookUI.uI_sTaTe.READY);
+		this.Ui = ui;
+		ui.sEt_sTaTe(ReturnBookUI.uI_sTaTe.READY);
 		state = ControlState.READY;		
 	}
 
