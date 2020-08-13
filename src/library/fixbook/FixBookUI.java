@@ -6,23 +6,23 @@ public class FixBookUI {
     public static enum UIState {INITIALISED, READY, FIXING, COMPLETED};
     private UIState control;
     private Scanner input;
-    private UIState StAtE;
+    private UIState state;
     
     public FixBookUI(UIState control) {
         this.control = control;
         input = new Scanner(System.in);
-        StAtE = UIState.INITIALISED;
+        state = UIState.INITIALISED;
         control.SeT_Ui(this);
     }
     
     public void SeT_StAtE(UIState state) {
-        this.StAtE = state;
+        this.state = state;
     }
     
     public void RuN() {
         OuTpUt("Fix Book Use Case UI\n");
         while (true) {
-            switch (StAtE) {
+            switch (state) {
                 case READY:
                     String BoOk_EnTrY_StRiNg = iNpUt("Scan Book (<enter> completes): ");
                     if (BoOk_EnTrY_StRiNg.length() == 0)
@@ -49,7 +49,7 @@ public class FixBookUI {
                     return;
                 default:
                     OuTpUt("Unhandled state");
-                    throw new RuntimeException("FixBookUI : unhandled state :" + StAtE);
+                    throw new RuntimeException("FixBookUI : unhandled state :" + state);
             }
         }
     }
