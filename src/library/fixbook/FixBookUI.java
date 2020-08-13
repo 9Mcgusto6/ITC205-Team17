@@ -8,7 +8,7 @@ public class FixBookUI {
     private Scanner input;
     private UIState state;
     
-    public FixBookUI(UIState control) {
+    public FixBookUI(FixBookControl control) {
         this.control = control;
         input = new Scanner(System.in);
         state = UIState.INITIALISED;
