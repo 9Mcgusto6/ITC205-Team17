@@ -63,7 +63,7 @@ public class FixBookUI {
         System.out.println(object);
     }
     
-    public void dIsPlAy(Object object) {
+    public void displayOutput(Object object) {
         OuTpUt(object);
     }
 }
