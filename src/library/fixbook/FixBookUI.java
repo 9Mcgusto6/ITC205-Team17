@@ -42,7 +42,7 @@ public class FixBookUI {
                     boolean mustFix = false;
                     if (answer.toUpperCase().equals("Y"))
                         mustFix = true;
-                    control.mustFix_BoOk(mustFix);
+                    control.fixBook(mustFix);
                     break;
                 case COMPLETED:
                     OuTpUt("Fixing process complete");
