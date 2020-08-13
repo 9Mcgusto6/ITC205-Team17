@@ -19,7 +19,7 @@ public class FixBookUI {
         this.state = state;
     }
     
-    public void RuN() {
+    public void fixBook() {
         OuTpUt("Fix Book Use Case UI\n");
         while (true) {
             switch (state) {
