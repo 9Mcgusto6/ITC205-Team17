@@ -4,15 +4,15 @@ import java.util.Scanner;
 public class FixBookUI {
     
     public static enum UIState {INITIALISED, READY, FIXING, COMPLETED};
-    private UIState CoNtRoL;
+    private UIState control;
     private Scanner InPuT;
     private UIState StAtE;
     
-    public FixBookUI(UIState CoNtRoL) {
-        this.CoNtRoL = CoNtRoL;
+    public FixBookUI(UIState control) {
+        this.control = control;
         InPuT = new Scanner(System.in);
         StAtE = UIState.INITIALISED;
-        CoNtRoL.SeT_Ui(this);
+        control.SeT_Ui(this);
     }
     
     public void SeT_StAtE(UIState state) {
@@ -26,11 +26,11 @@ public class FixBookUI {
                 case READY:
                     String BoOk_EnTrY_StRiNg = iNpUt("Scan Book (<enter> completes): ");
                     if (BoOk_EnTrY_StRiNg.length() == 0)
-                        CoNtRoL.SCannING_COMplete();
+                        control.SCannING_COMplete();
                     else {
                         try {
                             int BoOk_Id = Integer.valueOf(BoOk_EnTrY_StRiNg).intValue();
-                            CoNtRoL.BoOk_ScAnNeD(BoOk_Id);
+                            control.BoOk_ScAnNeD(BoOk_Id);
                         }
                         catch (NumberFormatException e) {
                             OuTpUt("Invalid bookId");
@@ -42,7 +42,7 @@ public class FixBookUI {
                     boolean FiX = false;
                     if (AnS.toUpperCase().equals("Y"))
                         FiX = true;
-                    CoNtRoL.FiX_BoOk(FiX);
+                    control.FiX_BoOk(FiX);
                     break;
                 case COMPLETED:
                     OuTpUt("Fixing process complete");
