@@ -42,10 +42,10 @@ public class PayFineControl {
         state = ControlState.CANCELLED;
     }
     
-    public double payFine(double AmOuNt) {
+    public double payFine(double amount) {
         if (!state.equals(ControlState.PAYING))
             throw new RuntimeException("PayFineControl: cannot call payFine except in PAYING state");
-        double ChAnGe = member.payFine(AmOuNt); //Changed PaY_FiNe to payFine according to method in Member
+        double ChAnGe = member.payFine(amount); //Changed PaY_FiNe to payFine according to method in Member
         if (ChAnGe > 0)
             UI.DiSplAY(String.format("Change: $%.2f", ChAnGe));
         UI.DiSplAY(member.toString());
