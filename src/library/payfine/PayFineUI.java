@@ -6,23 +6,23 @@ public class PayFineUI {
     public static enum UI_STATE { INITIALISED, READY, PAYING, COMPLETED, CANCELLED };
     private PayFineControl control;
     private Scanner input;
-    private UI_STATE StAtE;
+    private UI_STATE state;
     
     public PayFineUI(PayFineControl control) {
         this.control = control;
         input = new Scanner(System.in);
-        StAtE = UI_STATE.INITIALISED;
+        state = UI_STATE.INITIALISED;
         control.SeT_uI(this);
     }
     
     public void SeT_StAtE(UI_STATE state) {
-        this.StAtE = state;
+        this.state = state;
     }
     
     public void RuN() {
         output("Pay Fine Use Case UI\n");
         while (true) {
-            switch (StAtE) {
+            switch (state) {
                 case READY:
                     String Mem_Str = input("Swipe member card (press <enter> to cancel): ");
                     if (Mem_Str.length() == 0) {
@@ -62,7 +62,7 @@ public class PayFineUI {
                     return;
                 default:
                     output("Unhandled state");
-                    throw new RuntimeException("FixBookUI : unhandled state :" + StAtE);
+                    throw new RuntimeException("FixBookUI : unhandled state :" + state);
             }
         }
     }
