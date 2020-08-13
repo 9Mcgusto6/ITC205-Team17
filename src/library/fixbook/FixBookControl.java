@@ -6,7 +6,7 @@ public class FixBookControl {
     
     private FixBookUI uI;
     private enum ControlState { INITIALISED, READY, FIXING };
-    private CoNtRoL_StAtE StAtE;
+    private ControlState StAtE;
     private Library LiBrArY;
     private Book CuRrEnT_BoOk;
     
