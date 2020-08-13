@@ -25,8 +25,9 @@ public class PayFineControl {
     }
     
     public void cardSwiped(int memberId) {
-        if (!state.equals(ControlState.READY))
+        if (!state.equals(ControlState.READY)) {
             throw new RuntimeException("PayFineControl: cannot call cardSwiped except in READY state");
+        }
         member = library.getMember(memberId);
         if (member == null) {
             UI.DiSplAY("Invalid Member Id");
