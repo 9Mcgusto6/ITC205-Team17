@@ -7,11 +7,11 @@ public class PayFineControl {
     private PayFineUI UI;
     private enum ControlState {INITIALISED, READY, PAYING, COMPLETED, CANCELLED};
     private ControlState state;
-    private Library LiBrArY;
+    private Library library;
     private Member MeMbEr;
     
     public PayFineControl() {
-        this.LiBrArY = Library.getInstance();
+        this.library = Library.getInstance();
         state = ControlState.INITIALISED;
     }
     
@@ -27,7 +27,7 @@ public class PayFineControl {
     public void CaRd_sWiPeD(int MeMbEr_Id) {
         if (!state.equals(ControlState.READY))
             throw new RuntimeException("PayFineControl: cannot call cardSwiped except in READY state");
-        MeMbEr = LiBrArY.getMember(MeMbEr_Id);
+        MeMbEr = library.getMember(MeMbEr_Id);
         if (MeMbEr == null) {
             UI.DiSplAY("Invalid Member Id");
             return;
