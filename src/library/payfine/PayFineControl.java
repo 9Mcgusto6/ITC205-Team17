@@ -15,12 +15,12 @@ public class PayFineControl {
         StAtE = cOnTrOl_sTaTe.INITIALISED;
     }
     
-    public void SeT_uI(PayFineUI uI) {
+    public void SeT_uI(PayFineUI UI) {
         if (!StAtE.equals(cOnTrOl_sTaTe.INITIALISED)) {
             throw new RuntimeException("PayFineControl: cannot call setUI except in INITIALISED state");
         }
-        this.UI = uI;
-        uI.SeT_StAtE(PayFineUI.uI_sTaTe.READY);
+        this.UI = UI;
+        UI.SeT_StAtE(PayFineUI.uI_sTaTe.READY);
         StAtE = cOnTrOl_sTaTe.READY;
     }
     
