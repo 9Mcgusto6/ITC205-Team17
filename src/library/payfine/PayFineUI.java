@@ -38,21 +38,21 @@ public class PayFineUI {
                     }
                     break;
                 case PAYING:
-                    double AmouNT = 0;
+                    double amount = 0;
                     String Amt_Str = input("Enter amount (<Enter> cancels) : ");
                     if (Amt_Str.length() == 0) {
                         control.setCancelled();
                         break;
                     }
                     try {
-                        AmouNT = Double.valueOf(Amt_Str).doubleValue();
+                        amount = Double.valueOf(Amt_Str).doubleValue();
                     }
                     catch (NumberFormatException exception) {}
-                    if (AmouNT <= 0) {
+                    if (amount <= 0) {
                         output("Amount must be positive");
                         break;
                     }
-                    control.payFine(AmouNT);
+                    control.payFine(amount);
                     break;
                 case CANCELLED:
                     output("Pay Fine process cancelled");
