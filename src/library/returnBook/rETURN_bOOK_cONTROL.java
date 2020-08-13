@@ -10,7 +10,7 @@ public class rETURN_bOOK_cONTROL {
 	private ControlState state;
 	
 	private Library library;
-	private Loan CurrENT_loan;
+	private Loan currentLoan;
 	
 
 	public rETURN_bOOK_cONTROL() {
@@ -42,17 +42,17 @@ public class rETURN_bOOK_cONTROL {
 			Ui.DiSpLaY("Book has not been borrowed");
 			return;
 		}		
-		CurrENT_loan = library.getLoanByBookId(bOoK_iD);	
+		currentLoan = library.getLoanByBookId(bOoK_iD);	
 		double Over_Due_Fine = 0.0;
 
-		if (CurrENT_loan.isOverDue()) 
-			Over_Due_Fine = library.calculateOverdueFine(CurrENT_loan);
+		if (currentLoan.isOverDue()) 
+			Over_Due_Fine = library.calculateOverdueFine(currentLoan);
 		
 		Ui.DiSpLaY("Inspecting");
 		Ui.DiSpLaY(cUrReNt_bOoK.toString());
-		Ui.DiSpLaY(CurrENT_loan.toString());
+		Ui.DiSpLaY(currentLoan.toString());
 		
-		if (CurrENT_loan.isOverDue()) 
+		if (currentLoan.isOverDue()) 
 			Ui.DiSpLaY(String.format("\nOverdue fine : $%.2f", Over_Due_Fine));
 		
 		Ui.sEt_sTaTe(ReturnBookUI.uI_sTaTe.INSPECTING);
@@ -72,8 +72,8 @@ public class rETURN_bOOK_cONTROL {
 		if (!state.equals(ControlState.INSPECTING)) 
 			throw new RuntimeException("ReturnBookControl: cannot call dischargeLoan except in INSPECTING state");
 		
-		library.dischargeLoan(CurrENT_loan, iS_dAmAgEd);
-		CurrENT_loan = null;
+		library.dischargeLoan(currentLoan, iS_dAmAgEd);
+		currentLoan = null;
 		Ui.sEt_sTaTe(ReturnBookUI.uI_sTaTe.READY);
 		state = ControlState.READY;				
 	}
