@@ -52,7 +52,7 @@ public class PayFineUI {
                         output("Amount must be positive");
                         break;
                     }
-                    control.PaY_FiNe(AmouNT);
+                    control.payFine(AmouNT);
                     break;
                 case CANCELLED:
                     output("Pay Fine process cancelled");
