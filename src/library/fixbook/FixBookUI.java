@@ -12,7 +12,7 @@ public class FixBookUI {
         this.control = control;
         input = new Scanner(System.in);
         state = UIState.INITIALISED;
-        control.SeT_Ui(this);
+        control.setUI(this);
     }
     
     public void SeT_StAtE(UIState state) {
