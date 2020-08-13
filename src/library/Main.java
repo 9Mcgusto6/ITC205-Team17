@@ -12,7 +12,7 @@ import library.entities.Member;
 import library.fixbook.FixBookUI;
 import library.fixbook.FixBookControl;
 import library.payfine.PayFineUI;
-import library.payfine.pAY_fINE_cONTROL;
+import library.payfine.PayFineControl;
 import library.returnBook.ReturnBookUI;
 import library.returnBook.rETURN_bOOK_cONTROL;
 
@@ -137,7 +137,7 @@ public class Main {
 
 	
 	private static void PAY_FINES() {
-		new PayFineUI(new pAY_fINE_cONTROL()).RuN();		
+		new PayFineUI(new PayFineControl()).RuN();		
 	}
 
 
