@@ -37,7 +37,7 @@ public class PayFineControl {
         state = ControlState.PAYING;
     }
     
-    public void CaNcEl() {
+    public void setCancelled() {
         UI.SeT_StAtE(PayFineUI.uI_sTaTe.CANCELLED);
         state = ControlState.CANCELLED;
     }
