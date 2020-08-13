@@ -2,7 +2,7 @@ package library.fixbook;
 import library.entities.Book;
 import library.entities.Library;
 
-public class fIX_bOOK_cONTROL {
+public class FixBookControl {
     
     private FixBookUI Ui;
     private enum CoNtRoL_StAtE { INITIALISED, READY, FIXING };
@@ -10,7 +10,7 @@ public class fIX_bOOK_cONTROL {
     private Library LiBrArY;
     private Book CuRrEnT_BoOk;
     
-    public fIX_bOOK_cONTROL() {
+    public FixBookControl() {
         this.LiBrArY = Library.getInstance();
         StAtE = CoNtRoL_StAtE.INITIALISED;
     }
