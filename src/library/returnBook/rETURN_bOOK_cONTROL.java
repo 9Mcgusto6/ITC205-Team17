@@ -6,7 +6,7 @@ import library.entities.Loan;
 public class rETURN_bOOK_cONTROL {
 
 	private ReturnBookUI Ui;
-	private enum ControlState { INITIALISED, READY, INSPECTING };
+	private enum ControlState {INITIALISED, READY, INSPECTING};
 	private ControlState sTaTe;
 	
 	private Library lIbRaRy;
