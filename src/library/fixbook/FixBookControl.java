@@ -5,7 +5,7 @@ import library.entities.Library;
 public class FixBookControl {
     
     private FixBookUI uI;
-    private enum ControlState { INITIALISED, READY, FIXING };
+    private enum ControlState {INITIALISED, READY, FIXING};
     private ControlState StAtE;
     private Library LiBrArY;
     private Book CuRrEnT_BoOk;
