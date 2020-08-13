@@ -32,7 +32,7 @@ public class FixBookUI {
                             int BookId = Integer.valueOf(bookEntryString).intValue();
                             control.bookScanned(BookId);
                         }
-                        catch (NumberFormatException e) {
+                        catch (NumberFormatException exception) {
                             OuTpUt("Invalid bookId");
                         }
                     }
