@@ -19,7 +19,7 @@ public class PayFineUI {
         this.state = state;
     }
     
-    public void RuN() {
+    public void payFine() {
         output("Pay Fine Use Case UI\n");
         while (true) {
             switch (state) {
