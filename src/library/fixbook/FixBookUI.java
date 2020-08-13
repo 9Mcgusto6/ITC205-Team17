@@ -29,8 +29,8 @@ public class FixBookUI {
                         control.scanningComplete();
                     else {
                         try {
-                            int BoOk_Id = Integer.valueOf(bookEntryString).intValue();
-                            control.bookScanned(BoOk_Id);
+                            int BookId = Integer.valueOf(bookEntryString).intValue();
+                            control.bookScanned(BookId);
                         }
                         catch (NumberFormatException e) {
                             OuTpUt("Invalid bookId");
