@@ -30,14 +30,14 @@ public class FixBookControl {
         }
         currentBook = library.getBook(bookId);
         if (currentBook == null) {
-            ui.dIsPlAy("Invalid bookId");
+            ui.displayOutput("Invalid bookId");
             return;
         }
         if (!currentBook.isDamaged()) {
-            ui.dIsPlAy("Book has not been damaged");
+            ui.displayOutput("Book has not been damaged");
             return;
         }
-        ui.dIsPlAy(currentBook.toString());
+        ui.displayOutput(currentBook.toString());
         ui.setState(FixBookUI.UIState.FIXING);
         state = ControlState.FIXING;
     }
