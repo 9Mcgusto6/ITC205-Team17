@@ -24,13 +24,13 @@ public class PayFineUI {
         while (true) {
             switch (state) {
                 case READY:
-                    String Mem_Str = input("Swipe member card (press <enter> to cancel): ");
-                    if (Mem_Str.length() == 0) {
+                    String memberString = input("Swipe member card (press <enter> to cancel): ");
+                    if (memberString.length() == 0) {
                         control.CaNcEl();
                         break;
                     }
                     try {
-                        int Member_ID = Integer.valueOf(Mem_Str).intValue();
+                        int Member_ID = Integer.valueOf(memberString).intValue();
                         control.CaRd_sWiPeD(Member_ID);
                     }
                     catch (NumberFormatException e) {
