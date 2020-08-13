@@ -15,7 +15,7 @@ public class PayFineUI {
         control.setUI(this);
     }
     
-    public void SeT_StAtE(UI_STATE state) {
+    public void setState(UI_STATE state) {
         this.state = state;
     }
     
