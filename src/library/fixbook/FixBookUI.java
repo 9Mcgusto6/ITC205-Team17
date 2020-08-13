@@ -4,11 +4,11 @@ import java.util.Scanner;
 public class FixBookUI {
     
     public static enum UIState { INITIALISED, READY, FIXING, COMPLETED };
-    private fIX_bOOK_cONTROL CoNtRoL;
+    private UIState CoNtRoL;
     private Scanner InPuT;
     private UIState StAtE;
     
-    public FixBookUI(fIX_bOOK_cONTROL CoNtRoL) {
+    public FixBookUI(UIState CoNtRoL) {
         this.CoNtRoL = CoNtRoL;
         InPuT = new Scanner(System.in);
         StAtE = UIState.INITIALISED;
