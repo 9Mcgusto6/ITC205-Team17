@@ -4,7 +4,7 @@ import library.entities.Library;
 
 public class FixBookControl {
     
-    private FixBookUI uI;
+    private FixBookUI ui;
     private enum ControlState {INITIALISED, READY, FIXING};
     private ControlState state;
     private Library library;
@@ -15,11 +15,11 @@ public class FixBookControl {
         state = ControlState.INITIALISED;
     }
     
-    public void setUI(FixBookUI uI) {
+    public void setUI(FixBookUI ui) {
         if (!state.equals(ControlState.INITIALISED))
             throw new RuntimeException("FixBookControl: cannot call setUI except in INITIALISED state");
-        this.uI = uI;
-        uI.setState(FixBookUI.uI_sTaTe.READY);
+        this.ui = ui;
+        ui.setState(FixBookUI.uI_sTaTe.READY);
         state = ControlState.READY;
     }
     
@@ -28,15 +28,15 @@ public class FixBookControl {
             throw new RuntimeException("FixBookControl: cannot call bookScanned except in READY state");
         currentBook = library.getBook(BoOkId);
         if (currentBook == null) {
-            uI.dIsPlAy("Invalid bookId");
+            ui.dIsPlAy("Invalid bookId");
             return;
         }
         if (!currentBook.isDamaged()) {
-            uI.dIsPlAy("Book has not been damaged");
+            ui.dIsPlAy("Book has not been damaged");
             return;
         }
-        uI.dIsPlAy(currentBook.toString());
-        uI.setState(FixBookUI.uI_sTaTe.FIXING);
+        ui.dIsPlAy(currentBook.toString());
+        ui.setState(FixBookUI.uI_sTaTe.FIXING);
         state = ControlState.FIXING;
     }
     
@@ -46,13 +46,13 @@ public class FixBookControl {
         if (mUsT_FiX)
             library.repairBook(currentBook);
         currentBook = null;
-        uI.setState(FixBookUI.uI_sTaTe.READY);
+        ui.setState(FixBookUI.uI_sTaTe.READY);
         state = ControlState.READY;
     }
     
     public void SCannING_COMplete() {
         if (!state.equals(ControlState.READY))
             throw new RuntimeException("FixBookControl: cannot call scanningComplete except in READY state");
-        uI.setState(FixBookUI.uI_sTaTe.COMPLETED);
+        ui.setState(FixBookUI.uI_sTaTe.COMPLETED);
     }
 }
