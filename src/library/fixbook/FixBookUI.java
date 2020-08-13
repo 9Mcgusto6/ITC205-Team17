@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class FixBookUI {
     
     public static enum UIState {INITIALISED, READY, FIXING, COMPLETED};
-    private UIState control;
+    private FixBookControl control;
     private Scanner input;
     private UIState state;
     
