@@ -30,10 +30,10 @@ public class PayFineControl {
         }
         member = library.getMember(memberId);
         if (member == null) {
-            UI.DiSplAY("Invalid Member Id");
+            UI.displayOutput("Invalid Member Id");
             return;
         }
-        UI.DiSplAY(member.toString());
+        UI.displayOutput(member.toString());
         UI.setState(PayFineUI.UI_STATE.PAYING);
         state = ControlState.PAYING;
     }
@@ -49,9 +49,9 @@ public class PayFineControl {
         }
         double change = member.payFine(amount); //Changed PaY_FiNe to payFine according to method in Member
         if (change > 0) {
-            UI.DiSplAY(String.format("Change: $%.2f", change));
+            UI.displayOutput(String.format("Change: $%.2f", change));
         }
-        UI.DiSplAY(member.toString());
+        UI.displayOutput(member.toString());
         UI.setState(PayFineUI.UI_STATE.COMPLETED);
         state = ControlState.COMPLETED;
         return change;
