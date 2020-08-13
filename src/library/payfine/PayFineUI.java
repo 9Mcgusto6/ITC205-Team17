@@ -39,13 +39,13 @@ public class PayFineUI {
                     break;
                 case PAYING:
                     double amount = 0;
-                    String Amt_Str = input("Enter amount (<Enter> cancels) : ");
-                    if (Amt_Str.length() == 0) {
+                    String amountString = input("Enter amount (<Enter> cancels) : ");
+                    if (amountString.length() == 0) {
                         control.setCancelled();
                         break;
                     }
                     try {
-                        amount = Double.valueOf(Amt_Str).doubleValue();
+                        amount = Double.valueOf(amountString).doubleValue();
                     }
                     catch (NumberFormatException exception) {}
                     if (amount <= 0) {
