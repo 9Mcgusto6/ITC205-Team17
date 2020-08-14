@@ -33,12 +33,12 @@ public class rETURN_bOOK_cONTROL {
 		if (!state.equals(ControlState.READY)) 
 			throw new RuntimeException("ReturnBookControl: cannot call bookScanned except in READY state");
 		
-		Book cUrReNt_bOoK = library.getBook(bookId);
-		if (cUrReNt_bOoK == null) {
+		Book currentBook = library.getBook(bookId);
+		if (currentBook == null) {
 			Ui.DiSpLaY("Invalid Book Id");
 			return;
 		}
-		if (!cUrReNt_bOoK.isOnLoan()) {
+		if (!currentBook.isOnLoan()) {
 			Ui.DiSpLaY("Book has not been borrowed");
 			return;
 		}		
@@ -49,7 +49,7 @@ public class rETURN_bOOK_cONTROL {
 			Over_Due_Fine = library.calculateOverdueFine(currentLoan);
 		
 		Ui.DiSpLaY("Inspecting");
-		Ui.DiSpLaY(cUrReNt_bOoK.toString());
+		Ui.DiSpLaY(currentBook.toString());
 		Ui.DiSpLaY(currentLoan.toString());
 		
 		if (currentLoan.isOverDue()) 
