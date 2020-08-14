@@ -69,9 +69,9 @@ public class rETURN_bOOK_cONTROL {
 
 
     public void dischargeLoan(boolean iS_dAmAgEd) {
-        if (!state.equals(ControlState.INSPECTING)) 
+        if (!state.equals(ControlState.INSPECTING)) {
             throw new RuntimeException("ReturnBookControl: cannot call dischargeLoan except in INSPECTING state");
-        
+        }
         library.dischargeLoan(currentLoan, iS_dAmAgEd);
         currentLoan = null;
         Ui.sEt_sTaTe(ReturnBookUI.uI_sTaTe.READY);
