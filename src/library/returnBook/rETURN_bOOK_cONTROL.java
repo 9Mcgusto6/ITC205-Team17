@@ -29,7 +29,7 @@ public class rETURN_bOOK_cONTROL {
 	}
 
 
-	public void bOoK_sCaNnEd(int bOoK_iD) {
+	public void bookScanned(int bOoK_iD) {
 		if (!state.equals(ControlState.READY)) 
 			throw new RuntimeException("ReturnBookControl: cannot call bookScanned except in READY state");
 		
