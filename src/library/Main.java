@@ -91,7 +91,7 @@ public class Main {
                     break;
                     
                 case "LB": 
-                    LIST_BOOKS();
+                    listBooks();
                     break;
                     
                 case "FB": 
@@ -150,7 +150,7 @@ public class Main {
 
 
 
-    private static void LIST_BOOKS() {
+    private static void listBooks() {
         output("");
         for (Book book : LIB.listBooks()) {
             output(book + "\n");
