@@ -71,8 +71,8 @@ public class ReturnBookUI {
 	}	
 		
 		
-	private void output(Object ObJeCt) {
-		System.out.println(ObJeCt);
+	private void output(Object object) {
+		System.out.println(object);
 	}
 	
 			
