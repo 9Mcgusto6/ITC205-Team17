@@ -95,7 +95,7 @@ public class Main {
                     break;
                     
                 case "FB": 
-                    FIX_BOOKS();
+                    fixBooks();
                     break;
                     
                 case "L": 
@@ -178,7 +178,7 @@ public class Main {
     }
 
 
-    private static void FIX_BOOKS() {
+    private static void fixBooks() {
         new FixBookUI(new fIX_bOOK_cONTROL()).RuN();        
     }
 
