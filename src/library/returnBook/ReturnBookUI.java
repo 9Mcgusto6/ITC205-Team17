@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class ReturnBookUI {
 
-	public static enum UiState { INITIALISED, READY, INSPECTING, COMPLETED };
+	public static enum UiState {INITIALISED, READY, INSPECTING, COMPLETED};
 
 	private rETURN_bOOK_cONTROL CoNtRoL;
 	private Scanner iNpUt;
