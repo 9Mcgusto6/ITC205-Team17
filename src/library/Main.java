@@ -103,7 +103,7 @@ public class Main {
                     break;
                     
                 case "R": 
-                    RETURN_BOOK();
+                    returnBook();
                     break;
                     
                 case "LL": 
@@ -173,7 +173,7 @@ public class Main {
     }
 
 
-    private static void RETURN_BOOK() {
+    private static void returnBook() {
         new ReturnBookUI(new rETURN_bOOK_cONTROL()).run();        
     }
 
