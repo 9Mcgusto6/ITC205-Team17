@@ -83,7 +83,7 @@ public class Main {
                     break;
                     
                 case "LM": 
-                    LIST_MEMBERS();
+                    listMembers();
                     break;
                     
                 case "B": 
@@ -159,7 +159,7 @@ public class Main {
 
 
 
-    private static void LIST_MEMBERS() {
+    private static void listMembers() {
         output("");
         for (Member member : LIB.listMembers()) {
             output(member + "\n");
