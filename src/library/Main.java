@@ -211,9 +211,9 @@ public class Main {
         try {
             String lastName = input("Enter last name: ");
             String firstName  = input("Enter first name: ");
-            String EmAiL_AdDrEsS = input("Enter email address: ");
+            String emailAddress = input("Enter email address: ");
             int PhOnE_NuMbEr = Integer.valueOf(input("Enter phone number: ")).intValue();
-            Member MeMbEr = LIB.addMember(lastName, firstName, EmAiL_AdDrEsS, PhOnE_NuMbEr);
+            Member MeMbEr = LIB.addMember(lastName, firstName, emailAddress, PhOnE_NuMbEr);
             output("\n" + MeMbEr + "\n");
             
         } catch (NumberFormatException e) {
