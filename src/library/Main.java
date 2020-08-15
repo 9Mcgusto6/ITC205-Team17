@@ -87,7 +87,7 @@ public class Main {
                     break;
                     
                 case "B": 
-                    ADD_BOOK();
+                    addBook();
                     break;
                     
                 case "LB": 
@@ -196,7 +196,7 @@ public class Main {
     }
 
 
-    private static void ADD_BOOK() {
+    private static void addBook() {
         
         String AuThOr = input("Enter author: ");
         String TiTlE  = input("Enter title: ");
