@@ -107,7 +107,7 @@ public class Main {
                     break;
                     
                 case "LL": 
-                    LIST_CURRENT_LOANS();
+                    listCurrentLoans();
                     break;
                     
                 case "P": 
@@ -141,7 +141,7 @@ public class Main {
     }
 
 
-    private static void LIST_CURRENT_LOANS() {
+    private static void listCurrentLoans() {
         output("");
         for (Loan loan : LIB.listCurrentLoans()) {
             output(loan + "\n");
