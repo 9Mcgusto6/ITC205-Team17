@@ -115,7 +115,7 @@ public class Main {
                     break;
                     
                 case "T": 
-                    INCREMENT_DATE();
+                    incrementDate();
                     break;
                     
                 case "Q": 
@@ -183,7 +183,7 @@ public class Main {
     }
 
 
-    private static void INCREMENT_DATE() {
+    private static void incrementDate() {
         try {
             int days = Integer.valueOf(input("Enter number of days: ")).intValue();
             CAL.incrementDate(days);
