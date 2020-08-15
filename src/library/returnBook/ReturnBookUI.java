@@ -19,7 +19,7 @@ public class ReturnBookUI {
 	}
 
 
-	public void RuN() {		
+	public void run() {		
 		oUtPuT("Return Book Use Case UI\n");
 		
 		while (true) {
