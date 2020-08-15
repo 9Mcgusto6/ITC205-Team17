@@ -76,7 +76,7 @@ public class ReturnBookUI {
 	}
 	
 			
-	public void DiSpLaY(Object object) {
+	public void display(Object object) {
 		output(object);
 	}
 	
