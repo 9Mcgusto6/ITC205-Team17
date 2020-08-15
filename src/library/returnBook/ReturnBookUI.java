@@ -7,13 +7,13 @@ public class ReturnBookUI {
 	public static enum UiState {INITIALISED, READY, INSPECTING, COMPLETED};
 
 	private rETURN_bOOK_cONTROL control;
-	private Scanner iNpUt;
+	private Scanner input;
 	private UiState StATe;
 
 	
 	public ReturnBookUI(rETURN_bOOK_cONTROL cOnTrOL) {
 		this.control = cOnTrOL;
-		iNpUt = new Scanner(System.in);
+		input = new Scanner(System.in);
 		StATe = UiState.INITIALISED;
 		cOnTrOL.sEt_uI(this);
 	}
@@ -67,7 +67,7 @@ public class ReturnBookUI {
 	
 	private String iNpUt(String PrOmPt) {
 		System.out.print(PrOmPt);
-		return iNpUt.nextLine();
+		return input.nextLine();
 	}	
 		
 		
