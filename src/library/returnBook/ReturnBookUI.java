@@ -30,13 +30,13 @@ public class ReturnBookUI {
 				break;
 				
 			case READY:
-				String BoOk_InPuT_StRiNg = iNpUt("Scan Book (<enter> completes): ");
-				if (BoOk_InPuT_StRiNg.length() == 0) 
+				String bookInputString = iNpUt("Scan Book (<enter> completes): ");
+				if (bookInputString.length() == 0) 
 					control.scanningComplete();
 				
 				else {
 					try {
-						int Book_Id = Integer.valueOf(BoOk_InPuT_StRiNg).intValue();
+						int Book_Id = Integer.valueOf(bookInputString).intValue();
 						control.bookScanned(Book_Id);
 					}
 					catch (NumberFormatException e) {
