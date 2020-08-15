@@ -209,11 +209,11 @@ public class Main {
     
     private static void addMember() {
         try {
-            String LaSt_NaMe = input("Enter last name: ");
+            String lastName = input("Enter last name: ");
             String FiRsT_NaMe  = input("Enter first name: ");
             String EmAiL_AdDrEsS = input("Enter email address: ");
             int PhOnE_NuMbEr = Integer.valueOf(input("Enter phone number: ")).intValue();
-            Member MeMbEr = LIB.addMember(LaSt_NaMe, FiRsT_NaMe, EmAiL_AdDrEsS, PhOnE_NuMbEr);
+            Member MeMbEr = LIB.addMember(lastName, FiRsT_NaMe, EmAiL_AdDrEsS, PhOnE_NuMbEr);
             output("\n" + MeMbEr + "\n");
             
         } catch (NumberFormatException e) {
