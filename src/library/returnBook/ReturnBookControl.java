@@ -3,7 +3,7 @@ import library.entities.Book;
 import library.entities.Library;
 import library.entities.Loan;
 
-public class rETURN_bOOK_cONTROL {
+public class ReturnBookControl {
 
     private ReturnBookUI Ui;
     private enum ControlState {INITIALISED, READY, INSPECTING};
@@ -13,7 +13,7 @@ public class rETURN_bOOK_cONTROL {
     private Loan currentLoan;
     
 
-    public rETURN_bOOK_cONTROL() {
+    public ReturnBookControl() {
         this.library = Library.getInstance();
         state = ControlState.INITIALISED;
     }
