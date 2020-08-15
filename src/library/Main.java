@@ -201,8 +201,8 @@ public class Main {
         String author = input("Enter author: ");
         String title  = input("Enter title: ");
         String callNumber = input("Enter call number: ");
-        Book BoOk = LIB.addBook(author, title, callNumber);
-        output("\n" + BoOk + "\n");
+        Book book = LIB.addBook(author, title, callNumber);
+        output("\n" + book + "\n");
         
     }
 
