@@ -111,7 +111,7 @@ public class Main {
                     break;
                     
                 case "P": 
-                    PAY_FINES();
+                    payFines();
                     break;
                     
                 case "T": 
@@ -136,7 +136,7 @@ public class Main {
     }    
 
     
-    private static void PAY_FINES() {
+    private static void payFines() {
         new PayFineUI(new pAY_fINE_cONTROL()).RuN();        
     }
 
