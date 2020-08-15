@@ -24,7 +24,7 @@ public class rETURN_bOOK_cONTROL {
             throw new RuntimeException("ReturnBookControl: cannot call setUI except in INITIALISED state");
         }
         this.Ui = ui;
-        ui.sEt_sTaTe(ReturnBookUI.uI_sTaTe.READY);
+        ui.sEt_sTaTe(ReturnBookUI.UiState.READY);
         state = ControlState.READY;        
     }
 
@@ -55,7 +55,7 @@ public class rETURN_bOOK_cONTROL {
         if (currentLoan.isOverDue()) {
             Ui.DiSpLaY(String.format("\nOverdue fine : $%.2f", overdueFine));
         }
-        Ui.sEt_sTaTe(ReturnBookUI.uI_sTaTe.INSPECTING);
+        Ui.sEt_sTaTe(ReturnBookUI.UiState.INSPECTING);
         state = ControlState.INSPECTING;        
     }
 
@@ -64,7 +64,7 @@ public class rETURN_bOOK_cONTROL {
         if (!state.equals(ControlState.READY)) {
             throw new RuntimeException("ReturnBookControl: cannot call scanningComplete except in READY state");
         }
-        Ui.sEt_sTaTe(ReturnBookUI.uI_sTaTe.COMPLETED);        
+        Ui.sEt_sTaTe(ReturnBookUI.UiState.COMPLETED);        
     }
 
 
@@ -74,7 +74,7 @@ public class rETURN_bOOK_cONTROL {
         }
         library.dischargeLoan(currentLoan, iS_dAmAgEd);
         currentLoan = null;
-        Ui.sEt_sTaTe(ReturnBookUI.uI_sTaTe.READY);
+        Ui.sEt_sTaTe(ReturnBookUI.UiState.READY);
         state = ControlState.READY;                
     }
 
