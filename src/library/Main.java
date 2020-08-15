@@ -174,7 +174,7 @@ public class Main {
 
 
 	private static void RETURN_BOOK() {
-		new ReturnBookUI(new rETURN_bOOK_cONTROL()).RuN();		
+		new ReturnBookUI(new rETURN_bOOK_cONTROL()).run();		
 	}
 
 
