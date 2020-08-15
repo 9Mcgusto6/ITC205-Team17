@@ -99,7 +99,7 @@ public class Main {
                     break;
                     
                 case "L": 
-                    BORROW_BOOK();
+                    borrowBook();
                     break;
                     
                 case "R": 
@@ -168,7 +168,7 @@ public class Main {
 
 
 
-    private static void BORROW_BOOK() {
+    private static void borrowBook() {
         new BorrowBookUI(new bORROW_bOOK_cONTROL()).RuN();        
     }
 
