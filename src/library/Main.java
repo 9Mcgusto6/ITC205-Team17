@@ -199,9 +199,9 @@ public class Main {
     private static void addBook() {
         
         String author = input("Enter author: ");
-        String TiTlE  = input("Enter title: ");
+        String title  = input("Enter title: ");
         String CaLl_NuMbEr = input("Enter call number: ");
-        Book BoOk = LIB.addBook(author, TiTlE, CaLl_NuMbEr);
+        Book BoOk = LIB.addBook(author, title, CaLl_NuMbEr);
         output("\n" + BoOk + "\n");
         
     }
