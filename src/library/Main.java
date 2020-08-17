@@ -10,9 +10,9 @@ import library.entities.Library;
 import library.entities.Loan;
 import library.entities.Member;
 import library.fixbook.FixBookUI;
-import library.fixbook.fIX_bOOK_cONTROL;
+import library.fixbook.FixBookControl;
 import library.payfine.PayFineUI;
-import library.payfine.pAY_fINE_cONTROL;
+import library.payfine.PayFineControl;
 import library.returnBook.ReturnBookUI;
 import library.returnBook.ReturnBookControl;
 
@@ -137,7 +137,7 @@ public class Main {
 
     
     private static void payFines() {
-        new PayFineUI(new pAY_fINE_cONTROL()).RuN();        
+        new PayFineUI(new PayFineControl()).payFine();        
     }
 
 
@@ -179,7 +179,7 @@ public class Main {
 
 
     private static void fixBooks() {
-        new FixBookUI(new fIX_bOOK_cONTROL()).RuN();        
+        new FixBookUI(new FixBookControl()).fixBook();        
     }
 
 
@@ -233,6 +233,4 @@ public class Main {
     private static void output(Object object) {
         System.out.println(object);
     }
-
-    
 }
