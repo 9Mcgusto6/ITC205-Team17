@@ -19,11 +19,11 @@ import library.returnBook.ReturnBookControl;
 
 public class Main {
     
-    private static Scanner IN;
-    private static Library LIB;
-    private static String MENU;
-    private static Calendar CAL;
-    private static SimpleDateFormat SDF;
+    private static Scanner in;
+    private static Library lib;
+    private static String menu;
+    private static Calendar cal;
+    private static SimpleDateFormat sdf;
     
     
     private static String getMenu() {
@@ -54,27 +54,27 @@ public class Main {
 
     public static void main(String[] args) {        
         try {            
-            IN = new Scanner(System.in);
-            LIB = Library.getInstance();
-            CAL = Calendar.getInstance();
-            SDF = new SimpleDateFormat("dd/MM/yyyy");
+            in = new Scanner(System.in);
+            lib = Library.getInstance();
+            cal = Calendar.getInstance();
+            sdf = new SimpleDateFormat("dd/MM/yyyy");
     
-            for (Member m : LIB.listMembers()) {
+            for (Member m : lib.listMembers()) {
                 output(m);
             }
             output(" ");
-            for (Book b : LIB.listBooks()) {
+            for (Book b : lib.listBooks()) {
                 output(b);
             }
                         
-            MENU = getMenu();
+            menu = getMenu();
             
             boolean e = false;
             
             while (!e) {
                 
-                output("\n" + SDF.format(CAL.getDate()));
-                String c = input(MENU);
+                output("\n" + sdf.format(cal.getDate()));
+                String c = input(menu);
                 
                 switch (c.toUpperCase()) {
                 
@@ -143,7 +143,7 @@ public class Main {
 
     private static void listCurrentLoans() {
         output("");
-        for (Loan loan : LIB.listCurrentLoans()) {
+        for (Loan loan : lib.listCurrentLoans()) {
             output(loan + "\n");
         }        
     }
@@ -152,7 +152,7 @@ public class Main {
 
     private static void listBooks() {
         output("");
-        for (Book book : LIB.listBooks()) {
+        for (Book book : lib.listBooks()) {
             output(book + "\n");
         }        
     }
@@ -161,7 +161,7 @@ public class Main {
 
     private static void listMembers() {
         output("");
-        for (Member member : LIB.listMembers()) {
+        for (Member member : lib.listMembers()) {
             output(member + "\n");
         }        
     }
@@ -186,9 +186,9 @@ public class Main {
     private static void incrementDate() {
         try {
             int days = Integer.valueOf(input("Enter number of days: ")).intValue();
-            CAL.incrementDate(days);
-            LIB.checkCurrentLoans();
-            output(SDF.format(CAL.getDate()));
+            cal.incrementDate(days);
+            lib.checkCurrentLoans();
+            output(sdf.format(cal.getDate()));
             
         } catch (NumberFormatException e) {
              output("\nInvalid number of days\n");
@@ -201,7 +201,7 @@ public class Main {
         String author = input("Enter author: ");
         String title  = input("Enter title: ");
         String callNumber = input("Enter call number: ");
-        Book book = LIB.addBook(author, title, callNumber);
+        Book book = lib.addBook(author, title, callNumber);
         output("\n" + book + "\n");
         
     }
@@ -213,7 +213,7 @@ public class Main {
             String firstName  = input("Enter first name: ");
             String emailAddress = input("Enter email address: ");
             int phoneNumber = Integer.valueOf(input("Enter phone number: ")).intValue();
-            Member member = LIB.addMember(lastName, firstName, emailAddress, phoneNumber);
+            Member member = lib.addMember(lastName, firstName, emailAddress, phoneNumber);
             output("\n" + member + "\n");
             
         } catch (NumberFormatException e) {
@@ -225,7 +225,7 @@ public class Main {
 
     private static String input(String prompt) {
         System.out.print(prompt);
-        return IN.nextLine();
+        return in.nextLine();
     }
     
     
