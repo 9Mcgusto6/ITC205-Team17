@@ -15,7 +15,7 @@ public class ReturnBookUI {
         this.control = control;
         input = new Scanner(System.in);
         state = UiState.INITIALISED;
-        control.sEt_uI(this);
+        control.setUi(this);
     }
 
 
