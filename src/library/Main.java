@@ -59,24 +59,24 @@ public class Main {
             calendar = Calendar.getInstance();
             dateFormat = new SimpleDateFormat("dd/MM/yyyy");
     
-            for (Member m : library.listMembers()) {
-                output(m);
+            for (Member member : library.listMembers()) {
+                output(member);
             }
             output(" ");
-            for (Book b : library.listBooks()) {
-                output(b);
+            for (Book book : library.listBooks()) {
+                output(book);
             }
                         
             menu = getMenu();
             
-            boolean e = false;
+            boolean exit = false;
             
-            while (!e) {
+            while (!exit) {
                 
                 output("\n" + dateFormat.format(calendar.getDate()));
-                String c = input(menu);
+                String choice = input(menu);
                 
-                switch (c.toUpperCase()) {
+                switch (choice.toUpperCase()) {
                 
                 case "M": 
                     addMember();
@@ -119,7 +119,7 @@ public class Main {
                     break;
                     
                 case "Q": 
-                    e = true;
+                    exit = true;
                     break;
                     
                 default: 
@@ -129,8 +129,8 @@ public class Main {
                 
                 Library.save();
             }            
-        } catch (RuntimeException e) {
-            output(e);
+        } catch (RuntimeException exception) {
+            output(exception);
         }        
         output("\nEnded\n");
     }    
