@@ -84,7 +84,7 @@ public class BorrowBookControl {
 	
 	public void completeOperation() {
 		if (pendingList.size() == 0) 
-			CaNcEl();
+			cancelOperation();
 		
 		else {
 			ui.display("\nFinal Borrowing List");
@@ -115,7 +115,7 @@ public class BorrowBookControl {
 	}
 
 	
-	public void CaNcEl() {
+	public void cancelOperation() {
 		ui.setState(BorrowBookUI.UiState.CANCELLED);
 		state = ControlState.CANCELLED;
 	}
