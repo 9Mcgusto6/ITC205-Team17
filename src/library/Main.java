@@ -27,9 +27,9 @@ public class Main {
     
     
     private static String getMenu() {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
         
-        sb.append("\nLibrary Main Menu\n\n")
+        stringBuilder.append("\nLibrary Main Menu\n\n")
           .append("  M  : add member\n")
           .append("  LM : list members\n")
           .append("\n")
@@ -48,7 +48,7 @@ public class Main {
           .append("\n")
           .append("Choice : ");
           
-        return sb.toString();
+        return stringBuilder.toString();
     }
 
 
