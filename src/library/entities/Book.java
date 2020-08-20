@@ -10,7 +10,7 @@ public class Book implements Serializable {
     private String callNo;
     private int id;
     
-    private enum State { AVAILABLE, ON_LOAN, DAMAGED, RESERVED };
+    private enum State {AVAILABLE, ON_LOAN, DAMAGED, RESERVED};
     private State state;
     
     
@@ -23,14 +23,14 @@ public class Book implements Serializable {
     }
     
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Book: ").append(id).append("\n")
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Book: ").append(id).append("\n")
           .append("  Title:  ").append(title).append("\n")
           .append("  Author: ").append(author).append("\n")
           .append("  CallNo: ").append(callNo).append("\n")
           .append("  State:  ").append(state);
         
-        return sb.toString();
+        return stringBuilder.toString();
     }
 
     public Integer getId() {
