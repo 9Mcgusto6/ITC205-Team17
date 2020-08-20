@@ -45,7 +45,7 @@ public class Loan implements Serializable {
     
     
     public String toString() {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
         StringBuilder sb = new StringBuilder();
         sb.append("Loan:  ").append(loanId).append("\n")
@@ -53,7 +53,7 @@ public class Loan implements Serializable {
           .append(member.getLastName()).append(", ").append(member.getFirstName()).append("\n") //Changed GeT_LaSt_NaMe and GeT_FiRsT_NaMe to getLastName and getFirstName according to methods in Member 
           .append("  Book ").append(book.getId()).append(" : " )
           .append(book.getTitle()).append("\n")
-          .append("  DueDate: ").append(sdf.format(date)).append("\n")
+          .append("  DueDate: ").append(simpleDateFormat.format(date)).append("\n")
           .append("  State: ").append(state);        
         return sb.toString();
     }
