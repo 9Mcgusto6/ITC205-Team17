@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class BorrowBookUI {
 	
-	public static enum UIState { INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED };
+	public static enum UIState {INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED};
 
 	private BorrowBookControl CoNtRoL;
 	private Scanner InPuT;
