@@ -13,8 +13,8 @@ public class BorrowBookControl {
 	
 	private Library library;
 	private Member member;
-	private enum CONTROL_STATE { INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED };
-	private CONTROL_STATE sTaTe;
+	private enum ControlState { INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED };
+	private ControlState sTaTe;
 	
 	private List<Book> pEnDiNg_LiSt;
 	private List<Loan> cOmPlEtEd_LiSt;
@@ -22,22 +22,22 @@ public class BorrowBookControl {
 	
 	public BorrowBookControl() {
 		this.library = Library.getInstance();
-		sTaTe = CONTROL_STATE.INITIALISED;
+		sTaTe = ControlState.INITIALISED;
 	}
 	
 
 	public void SeT_Ui(BorrowBookUI Ui) {
-		if (!sTaTe.equals(CONTROL_STATE.INITIALISED)) 
+		if (!sTaTe.equals(ControlState.INITIALISED)) 
 			throw new RuntimeException("BorrowBookControl: cannot call setUI except in INITIALISED state");
 			
 		this.ui = Ui;
 		Ui.setState(BorrowBookUI.UiState.READY);
-		sTaTe = CONTROL_STATE.READY;		
+		sTaTe = ControlState.READY;		
 	}
 
 		
 	public void SwIpEd(int mEmBeR_Id) {
-		if (!sTaTe.equals(CONTROL_STATE.READY)) 
+		if (!sTaTe.equals(ControlState.READY)) 
 			throw new RuntimeException("BorrowBookControl: cannot call cardSwiped except in READY state");
 			
 		member = library.getMember(mEmBeR_Id);
@@ -48,7 +48,7 @@ public class BorrowBookControl {
 		if (library.canMemberBorrow(member)) {
 			pEnDiNg_LiSt = new ArrayList<>();
 			ui.setState(BorrowBookUI.UiState.SCANNING);
-			sTaTe = CONTROL_STATE.SCANNING; 
+			sTaTe = ControlState.SCANNING; 
 		}
 		else {
 			ui.display("Member cannot borrow at this time");
@@ -59,7 +59,7 @@ public class BorrowBookControl {
 	
 	public void ScAnNeD(int bOoKiD) {
 		bOoK = null;
-		if (!sTaTe.equals(CONTROL_STATE.SCANNING)) 
+		if (!sTaTe.equals(ControlState.SCANNING)) 
 			throw new RuntimeException("BorrowBookControl: cannot call bookScanned except in SCANNING state");
 			
 		bOoK = library.getBook(bOoKiD);
@@ -93,13 +93,13 @@ public class BorrowBookControl {
 			
 			cOmPlEtEd_LiSt = new ArrayList<Loan>();
 			ui.setState(BorrowBookUI.UiState.FINALISING);
-			sTaTe = CONTROL_STATE.FINALISING;
+			sTaTe = ControlState.FINALISING;
 		}
 	}
 
 
 	public void CoMmIt_LoAnS() {
-		if (!sTaTe.equals(CONTROL_STATE.FINALISING)) 
+		if (!sTaTe.equals(ControlState.FINALISING)) 
 			throw new RuntimeException("BorrowBookControl: cannot call commitLoans except in FINALISING state");
 			
 		for (Book B : pEnDiNg_LiSt) {
@@ -111,13 +111,13 @@ public class BorrowBookControl {
 			ui.display(LOAN.toString());
 		
 		ui.setState(BorrowBookUI.UiState.COMPLETED);
-		sTaTe = CONTROL_STATE.COMPLETED;
+		sTaTe = ControlState.COMPLETED;
 	}
 
 	
 	public void CaNcEl() {
 		ui.setState(BorrowBookUI.UiState.CANCELLED);
-		sTaTe = CONTROL_STATE.CANCELLED;
+		sTaTe = ControlState.CANCELLED;
 	}
 	
 	
