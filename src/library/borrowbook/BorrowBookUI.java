@@ -30,7 +30,7 @@ public class BorrowBookUI {
 	}
 	
 			
-	public void SeT_StAtE(UIState StAtE) {
+	public void setState(UIState StAtE) {
 		this.state = StAtE;
 	}
 
