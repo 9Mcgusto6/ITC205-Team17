@@ -83,9 +83,9 @@ public class BorrowBookControl {
 	
 	
     public void completeOperation() {
-        if (pendingList.size() == 0) 
+        if (pendingList.size() == 0) {
             cancelOperation();
-		
+        }
         else {
             ui.display("\nFinal Borrowing List");
             for (Book book : pendingList) 
