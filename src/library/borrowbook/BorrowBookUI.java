@@ -7,13 +7,13 @@ public class BorrowBookUI {
 	public static enum UIState {INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED};
 
 	private BorrowBookControl control;
-	private Scanner InPuT;
+	private Scanner input;
 	private UIState StaTe;
 
 	
 	public BorrowBookUI(BorrowBookControl control) {
 		this.control = control;
-		InPuT = new Scanner(System.in);
+		input = new Scanner(System.in);
 		StaTe = UIState.INITIALISED;
 		control.SeT_Ui(this);
 	}
@@ -21,7 +21,7 @@ public class BorrowBookUI {
 	
 	private String iNpUT(String PrOmPt) {
 		System.out.print(PrOmPt);
-		return InPuT.nextLine();
+		return input.nextLine();
 	}	
 		
 		
