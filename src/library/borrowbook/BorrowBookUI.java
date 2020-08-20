@@ -25,7 +25,7 @@ public class BorrowBookUI {
 	}	
 		
 		
-	private void OuTpUt(Object ObJeCt) {
+	private void output(Object ObJeCt) {
 		System.out.println(ObJeCt);
 	}
 	
@@ -36,14 +36,14 @@ public class BorrowBookUI {
 
 	
 	public void RuN() {
-		OuTpUt("Borrow Book Use Case UI\n");
+		output("Borrow Book Use Case UI\n");
 		
 		while (true) {
 			
 			switch (state) {			
 			
 			case CANCELLED:
-				OuTpUt("Borrowing Cancelled");
+				output("Borrowing Cancelled");
 				return;
 
 				
@@ -58,7 +58,7 @@ public class BorrowBookUI {
 					control.SwIpEd(MeMbEr_Id);
 				}
 				catch (NumberFormatException e) {
-					OuTpUt("Invalid Member Id");
+					output("Invalid Member Id");
 				}
 				break;
 
@@ -80,7 +80,7 @@ public class BorrowBookUI {
 					control.ScAnNeD(BiD);
 					
 				} catch (NumberFormatException e) {
-					OuTpUt("Invalid Book Id");
+					output("Invalid Book Id");
 				} 
 				break;
 					
@@ -98,12 +98,12 @@ public class BorrowBookUI {
 				
 				
 			case COMPLETED:
-				OuTpUt("Borrowing Completed");
+				output("Borrowing Completed");
 				return;
 	
 				
 			default:
-				OuTpUt("Unhandled state");
+				output("Unhandled state");
 				throw new RuntimeException("BorrowBookUI : unhandled state :" + state);			
 			}
 		}		
@@ -111,7 +111,7 @@ public class BorrowBookUI {
 
 
 	public void DiSpLaY(Object object) {
-		OuTpUt(object);		
+		output(object);		
 	}
 
 
