@@ -18,7 +18,7 @@ public class BorrowBookControl {
 	
 	private List<Book> pendingList;
 	private List<Loan> completedList;
-	private Book bOoK;
+	private Book book;
 	
 	public BorrowBookControl() {
 		this.library = Library.getInstance();
@@ -58,20 +58,20 @@ public class BorrowBookControl {
 	
 	
 	public void ScAnNeD(int bOoKiD) {
-		bOoK = null;
+		book = null;
 		if (!state.equals(ControlState.SCANNING)) 
 			throw new RuntimeException("BorrowBookControl: cannot call bookScanned except in SCANNING state");
 			
-		bOoK = library.getBook(bOoKiD);
-		if (bOoK == null) {
+		book = library.getBook(bOoKiD);
+		if (book == null) {
 			ui.display("Invalid bookId");
 			return;
 		}
-		if (!bOoK.isAvailable()) {
+		if (!book.isAvailable()) {
 			ui.display("Book cannot be borrowed");
 			return;
 		}
-		pendingList.add(bOoK);
+		pendingList.add(book);
 		for (Book B : pendingList) 
 			ui.display(B.toString());
 		
