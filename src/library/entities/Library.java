@@ -242,8 +242,9 @@ public class Library implements Serializable {
 			currentBook.canRepair();
 			damagedBooks.remove(currentBook.getId());
 		}
-		else 
+		else {
 			throw new RuntimeException("Library: repairBook: book is not damaged");	
+		}
 	}	
 	
 }
