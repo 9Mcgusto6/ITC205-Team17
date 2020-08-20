@@ -77,9 +77,9 @@ public class BorrowBookUI {
                 }
                 try {
                     int bookId = Integer.valueOf(bookStringInput).intValue();
-                    control.bookScanned(bookId);
-					
-                } catch (NumberFormatException exit) {
+                    control.bookScanned(bookId);					
+                } 
+                catch (NumberFormatException exit) {
                     output("Invalid Book Id");
                 } 
                 break;
@@ -88,9 +88,9 @@ public class BorrowBookUI {
             case FINALISING:
                 String ans = input("Commit loans? (Y/N): ");
                 if (ans.toUpperCase().equals("N")) {
-                    control.cancelOperation();
-					
-                } else {
+                    control.cancelOperation();					
+                } 
+                else {
                     control.commitLoans();
                     input("Press <any key> to complete ");
                 }
