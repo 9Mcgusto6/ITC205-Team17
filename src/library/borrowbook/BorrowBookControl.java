@@ -102,8 +102,8 @@ public class BorrowBookControl {
 		if (!state.equals(ControlState.FINALISING)) 
 			throw new RuntimeException("BorrowBookControl: cannot call commitLoans except in FINALISING state");
 			
-		for (Book B : pendingList) {
-			Loan lOaN = library.issueLoan(B, member);
+		for (Book book : pendingList) {
+			Loan lOaN = library.issueLoan(book, member);
 			completedList.add(lOaN);			
 		}
 		ui.display("Completed Loan Slip");
