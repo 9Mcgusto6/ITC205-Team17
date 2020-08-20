@@ -11,7 +11,7 @@ public class BorrowBookControl {
 	
 	private BorrowBookUI ui;
 	
-	private Library lIbRaRy;
+	private Library library;
 	private Member mEmBeR;
 	private enum CONTROL_STATE { INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED };
 	private CONTROL_STATE sTaTe;
@@ -21,7 +21,7 @@ public class BorrowBookControl {
 	private Book bOoK;
 	
 	public BorrowBookControl() {
-		this.lIbRaRy = Library.getInstance();
+		this.library = Library.getInstance();
 		sTaTe = CONTROL_STATE.INITIALISED;
 	}
 	
@@ -40,12 +40,12 @@ public class BorrowBookControl {
 		if (!sTaTe.equals(CONTROL_STATE.READY)) 
 			throw new RuntimeException("BorrowBookControl: cannot call cardSwiped except in READY state");
 			
-		mEmBeR = lIbRaRy.getMember(mEmBeR_Id);
+		mEmBeR = library.getMember(mEmBeR_Id);
 		if (mEmBeR == null) {
 			ui.display("Invalid memberId");
 			return;
 		}
-		if (lIbRaRy.canMemberBorrow(mEmBeR)) {
+		if (library.canMemberBorrow(mEmBeR)) {
 			pEnDiNg_LiSt = new ArrayList<>();
 			ui.setState(BorrowBookUI.UiState.SCANNING);
 			sTaTe = CONTROL_STATE.SCANNING; 
@@ -62,7 +62,7 @@ public class BorrowBookControl {
 		if (!sTaTe.equals(CONTROL_STATE.SCANNING)) 
 			throw new RuntimeException("BorrowBookControl: cannot call bookScanned except in SCANNING state");
 			
-		bOoK = lIbRaRy.getBook(bOoKiD);
+		bOoK = library.getBook(bOoKiD);
 		if (bOoK == null) {
 			ui.display("Invalid bookId");
 			return;
@@ -75,7 +75,7 @@ public class BorrowBookControl {
 		for (Book B : pEnDiNg_LiSt) 
 			ui.display(B.toString());
 		
-		if (lIbRaRy.getNumberOfLoansRemaining(mEmBeR) - pEnDiNg_LiSt.size() == 0) {
+		if (library.getNumberOfLoansRemaining(mEmBeR) - pEnDiNg_LiSt.size() == 0) {
 			ui.display("Loan limit reached");
 			CoMpLeTe();
 		}
@@ -103,7 +103,7 @@ public class BorrowBookControl {
 			throw new RuntimeException("BorrowBookControl: cannot call commitLoans except in FINALISING state");
 			
 		for (Book B : pEnDiNg_LiSt) {
-			Loan lOaN = lIbRaRy.issueLoan(B, mEmBeR);
+			Loan lOaN = library.issueLoan(B, mEmBeR);
 			cOmPlEtEd_LiSt.add(lOaN);			
 		}
 		ui.display("Completed Loan Slip");
