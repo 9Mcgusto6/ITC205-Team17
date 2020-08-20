@@ -57,7 +57,7 @@ public class BorrowBookUI {
                     int memberId = Integer.valueOf(memberString).intValue();
                     control.cardSwiped(memberId);
                 }
-                catch (NumberFormatException exit) {
+                catch (NumberFormatException exception) {
                     output("Invalid Member Id");
                 }
                 break;
@@ -79,7 +79,7 @@ public class BorrowBookUI {
                     int bookId = Integer.valueOf(bookStringInput).intValue();
                     control.bookScanned(bookId);					
                 } 
-                catch (NumberFormatException exit) {
+                catch (NumberFormatException exception) {
                     output("Invalid Book Id");
                 } 
                 break;
