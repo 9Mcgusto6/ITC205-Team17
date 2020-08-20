@@ -19,7 +19,7 @@ public class BorrowBookUI {
 	}
 
 	
-	private String iNpUT(String PrOmPt) {
+	private String input(String PrOmPt) {
 		System.out.print(PrOmPt);
 		return input.nextLine();
 	}	
@@ -48,7 +48,7 @@ public class BorrowBookUI {
 
 				
 			case READY:
-				String MEM_STR = iNpUT("Swipe member card (press <enter> to cancel): ");
+				String MEM_STR = input("Swipe member card (press <enter> to cancel): ");
 				if (MEM_STR.length() == 0) {
 					control.CaNcEl();
 					break;
@@ -64,13 +64,13 @@ public class BorrowBookUI {
 
 				
 			case RESTRICTED:
-				iNpUT("Press <any key> to cancel");
+				input("Press <any key> to cancel");
 				control.CaNcEl();
 				break;
 			
 				
 			case SCANNING:
-				String BoOk_StRiNg_InPuT = iNpUT("Scan Book (<enter> completes): ");
+				String BoOk_StRiNg_InPuT = input("Scan Book (<enter> completes): ");
 				if (BoOk_StRiNg_InPuT.length() == 0) {
 					control.CoMpLeTe();
 					break;
@@ -86,13 +86,13 @@ public class BorrowBookUI {
 					
 				
 			case FINALISING:
-				String AnS = iNpUT("Commit loans? (Y/N): ");
+				String AnS = input("Commit loans? (Y/N): ");
 				if (AnS.toUpperCase().equals("N")) {
 					control.CaNcEl();
 					
 				} else {
 					control.CoMmIt_LoAnS();
-					iNpUT("Press <any key> to complete ");
+					input("Press <any key> to complete ");
 				}
 				break;
 				
