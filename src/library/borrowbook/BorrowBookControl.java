@@ -88,9 +88,9 @@ public class BorrowBookControl {
         }
         else {
             ui.display("\nFinal Borrowing List");
-            for (Book book : pendingList) 
+            for (Book book : pendingList) {
                 ui.display(book.toString());
-			
+            }
             completedList = new ArrayList<Loan>();
             ui.setState(BorrowBookUI.UiState.FINALISING);
             state = ControlState.FINALISING;
