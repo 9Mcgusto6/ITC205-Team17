@@ -19,8 +19,8 @@ public class BorrowBookUI {
 	}
 
 	
-	private String input(String PrOmPt) {
-		System.out.print(PrOmPt);
+	private String input(String prompt) {
+		System.out.print(prompt);
 		return input.nextLine();
 	}	
 		
