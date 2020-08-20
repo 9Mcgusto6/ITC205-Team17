@@ -4,17 +4,17 @@ import java.util.Scanner;
 
 public class BorrowBookUI {
 	
-    public static enum UIState {INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED};
+    public static enum UiState {INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED};
 
     private BorrowBookControl control;
     private Scanner input;
-    private UIState state;
+    private UiState state;
 
 	
     public BorrowBookUI(BorrowBookControl control) {
         this.control = control;
         input = new Scanner(System.in);
-        state = UIState.INITIALISED;
+        state = UiState.INITIALISED;
         control.SeT_Ui(this);
     }
 
@@ -30,7 +30,7 @@ public class BorrowBookUI {
     }
 	
 			
-    public void setState(UIState state) {
+    public void setState(UiState state) {
         this.state = state;
     }
 
