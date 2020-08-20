@@ -31,7 +31,7 @@ public class BorrowBookControl {
 			throw new RuntimeException("BorrowBookControl: cannot call setUI except in INITIALISED state");
 			
 		this.uI = Ui;
-		Ui.SeT_StAtE(BorrowBookUI.uI_STaTe.READY);
+		Ui.SeT_StAtE(BorrowBookUI.UIState.READY);
 		sTaTe = CONTROL_STATE.READY;		
 	}
 
@@ -47,12 +47,12 @@ public class BorrowBookControl {
 		}
 		if (lIbRaRy.canMemberBorrow(mEmBeR)) {
 			pEnDiNg_LiSt = new ArrayList<>();
-			uI.SeT_StAtE(BorrowBookUI.uI_STaTe.SCANNING);
+			uI.SeT_StAtE(BorrowBookUI.UIState.SCANNING);
 			sTaTe = CONTROL_STATE.SCANNING; 
 		}
 		else {
 			uI.DiSpLaY("Member cannot borrow at this time");
-			uI.SeT_StAtE(BorrowBookUI.uI_STaTe.RESTRICTED); 
+			uI.SeT_StAtE(BorrowBookUI.UIState.RESTRICTED); 
 		}
 	}
 	
@@ -92,7 +92,7 @@ public class BorrowBookControl {
 				uI.DiSpLaY(bOoK.toString());
 			
 			cOmPlEtEd_LiSt = new ArrayList<Loan>();
-			uI.SeT_StAtE(BorrowBookUI.uI_STaTe.FINALISING);
+			uI.SeT_StAtE(BorrowBookUI.UIState.FINALISING);
 			sTaTe = CONTROL_STATE.FINALISING;
 		}
 	}
@@ -110,13 +110,13 @@ public class BorrowBookControl {
 		for (Loan LOAN : cOmPlEtEd_LiSt) 
 			uI.DiSpLaY(LOAN.toString());
 		
-		uI.SeT_StAtE(BorrowBookUI.uI_STaTe.COMPLETED);
+		uI.SeT_StAtE(BorrowBookUI.UIState.COMPLETED);
 		sTaTe = CONTROL_STATE.COMPLETED;
 	}
 
 	
 	public void CaNcEl() {
-		uI.SeT_StAtE(BorrowBookUI.uI_STaTe.CANCELLED);
+		uI.SeT_StAtE(BorrowBookUI.UIState.CANCELLED);
 		sTaTe = CONTROL_STATE.CANCELLED;
 	}
 	
