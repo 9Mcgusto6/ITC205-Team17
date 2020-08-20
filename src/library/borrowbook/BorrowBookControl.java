@@ -7,7 +7,7 @@ import library.entities.Library;
 import library.entities.Loan;
 import library.entities.Member;
 
-public class bORROW_bOOK_cONTROL {
+public class BorrowBookControl {
 	
 	private BorrowBookUI uI;
 	
@@ -20,7 +20,7 @@ public class bORROW_bOOK_cONTROL {
 	private List<Loan> cOmPlEtEd_LiSt;
 	private Book bOoK;
 	
-	public bORROW_bOOK_cONTROL() {
+	public BorrowBookControl() {
 		this.lIbRaRy = Library.getInstance();
 		sTaTe = CONTROL_STATE.INITIALISED;
 	}
