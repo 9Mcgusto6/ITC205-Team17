@@ -8,13 +8,13 @@ public class BorrowBookUI {
 
 	private BorrowBookControl control;
 	private Scanner input;
-	private UIState StaTe;
+	private UIState state;
 
 	
 	public BorrowBookUI(BorrowBookControl control) {
 		this.control = control;
 		input = new Scanner(System.in);
-		StaTe = UIState.INITIALISED;
+		state = UIState.INITIALISED;
 		control.SeT_Ui(this);
 	}
 
@@ -31,7 +31,7 @@ public class BorrowBookUI {
 	
 			
 	public void SeT_StAtE(UIState StAtE) {
-		this.StaTe = StAtE;
+		this.state = StAtE;
 	}
 
 	
@@ -40,7 +40,7 @@ public class BorrowBookUI {
 		
 		while (true) {
 			
-			switch (StaTe) {			
+			switch (state) {			
 			
 			case CANCELLED:
 				OuTpUt("Borrowing Cancelled");
@@ -104,7 +104,7 @@ public class BorrowBookUI {
 				
 			default:
 				OuTpUt("Unhandled state");
-				throw new RuntimeException("BorrowBookUI : unhandled state :" + StaTe);			
+				throw new RuntimeException("BorrowBookUI : unhandled state :" + state);			
 			}
 		}		
 	}
