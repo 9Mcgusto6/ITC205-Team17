@@ -28,7 +28,7 @@ public class BorrowBookControl {
 
 	public void setUi(BorrowBookUI ui) {
 		if (!state.equals(ControlState.INITIALISED)) 
-			throw new RuntimeException("BorrowBookControl: cannot call setUI except in INITIALISED state");
+			throw new RuntimeException("BorrowBookControl: cannot call setUi except in INITIALISED state");
 			
 		this.ui = ui;
 		ui.setState(BorrowBookUI.UiState.READY);
@@ -36,7 +36,7 @@ public class BorrowBookControl {
 	}
 
 		
-	public void SwIpEd(int mEmBeR_Id) {
+	public void swiped(int mEmBeR_Id) {
 		if (!state.equals(ControlState.READY)) 
 			throw new RuntimeException("BorrowBookControl: cannot call cardSwiped except in READY state");
 			
