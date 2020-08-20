@@ -70,13 +70,13 @@ public class BorrowBookUI {
 			
 				
 			case SCANNING:
-				String BoOk_StRiNg_InPuT = input("Scan Book (<enter> completes): ");
-				if (BoOk_StRiNg_InPuT.length() == 0) {
+				String bookStringInput = input("Scan Book (<enter> completes): ");
+				if (bookStringInput.length() == 0) {
 					control.CoMpLeTe();
 					break;
 				}
 				try {
-					int BiD = Integer.valueOf(BoOk_StRiNg_InPuT).intValue();
+					int BiD = Integer.valueOf(bookStringInput).intValue();
 					control.ScAnNeD(BiD);
 					
 				} catch (NumberFormatException e) {
