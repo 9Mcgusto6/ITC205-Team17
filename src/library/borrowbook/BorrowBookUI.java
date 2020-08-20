@@ -6,13 +6,13 @@ public class BorrowBookUI {
 	
 	public static enum UIState {INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED};
 
-	private BorrowBookControl CoNtRoL;
+	private BorrowBookControl control;
 	private Scanner InPuT;
 	private UIState StaTe;
 
 	
 	public BorrowBookUI(BorrowBookControl control) {
-		this.CoNtRoL = control;
+		this.control = control;
 		InPuT = new Scanner(System.in);
 		StaTe = UIState.INITIALISED;
 		control.SeT_Ui(this);
@@ -50,12 +50,12 @@ public class BorrowBookUI {
 			case READY:
 				String MEM_STR = iNpUT("Swipe member card (press <enter> to cancel): ");
 				if (MEM_STR.length() == 0) {
-					CoNtRoL.CaNcEl();
+					control.CaNcEl();
 					break;
 				}
 				try {
 					int MeMbEr_Id = Integer.valueOf(MEM_STR).intValue();
-					CoNtRoL.SwIpEd(MeMbEr_Id);
+					control.SwIpEd(MeMbEr_Id);
 				}
 				catch (NumberFormatException e) {
 					OuTpUt("Invalid Member Id");
@@ -65,19 +65,19 @@ public class BorrowBookUI {
 				
 			case RESTRICTED:
 				iNpUT("Press <any key> to cancel");
-				CoNtRoL.CaNcEl();
+				control.CaNcEl();
 				break;
 			
 				
 			case SCANNING:
 				String BoOk_StRiNg_InPuT = iNpUT("Scan Book (<enter> completes): ");
 				if (BoOk_StRiNg_InPuT.length() == 0) {
-					CoNtRoL.CoMpLeTe();
+					control.CoMpLeTe();
 					break;
 				}
 				try {
 					int BiD = Integer.valueOf(BoOk_StRiNg_InPuT).intValue();
-					CoNtRoL.ScAnNeD(BiD);
+					control.ScAnNeD(BiD);
 					
 				} catch (NumberFormatException e) {
 					OuTpUt("Invalid Book Id");
@@ -88,10 +88,10 @@ public class BorrowBookUI {
 			case FINALISING:
 				String AnS = iNpUT("Commit loans? (Y/N): ");
 				if (AnS.toUpperCase().equals("N")) {
-					CoNtRoL.CaNcEl();
+					control.CaNcEl();
 					
 				} else {
-					CoNtRoL.CoMmIt_LoAnS();
+					control.CoMmIt_LoAnS();
 					iNpUT("Press <any key> to complete ");
 				}
 				break;
