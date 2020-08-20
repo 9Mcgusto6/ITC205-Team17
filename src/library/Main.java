@@ -57,7 +57,7 @@ public class Main {
             input = new Scanner(System.in);
             library = Library.getInstance();
             calendar = Calendar.getInstance();
-            dateFormat = new SimpleDateFormat("dd/mm/yyyy");
+            dateFormat = new SimpleDateFormat("dd/MM/yyyy");
     
             for (Member member : library.listMembers()) {
                 output(member);
