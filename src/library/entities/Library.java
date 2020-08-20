@@ -59,8 +59,8 @@ public class Library implements Serializable {
 					Calendar.getInstance().setDate(self.loanDate); //Calendar.gEtInStAnCe().SeT_DaTe changed to getInstance().setDate to match method in Calendar
 					libraryFile.close();
 				}
-				catch (Exception e) {
-					throw new RuntimeException(e);
+				catch (Exception exception) {
+					throw new RuntimeException(exception);
 				}
 			}
 			else {
@@ -79,8 +79,8 @@ public class Library implements Serializable {
 				libraryFile.flush();
 				libraryFile.close();	
 			}
-			catch (Exception e) {
-				throw new RuntimeException(e);
+			catch (Exception exception) {
+				throw new RuntimeException(exception);
 			}
 		}
 	}
