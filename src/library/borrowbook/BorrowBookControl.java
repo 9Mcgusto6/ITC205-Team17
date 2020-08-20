@@ -72,9 +72,9 @@ public class BorrowBookControl {
             return;
         }
         pendingList.add(book);
-        for (Book book : pendingList) 
+        for (Book book : pendingList) {
             ui.display(book.toString());
-		
+        }
         if (library.getNumberOfLoansRemaining(member) - pendingList.size() == 0) {
             ui.display("Loan limit reached");
             completeOperation();
