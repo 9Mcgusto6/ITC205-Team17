@@ -169,7 +169,7 @@ public class Main {
 
 
     private static void borrowBook() {
-        new BorrowBookUI(new BorrowBookControl()).RuN();        
+        new BorrowBookUI(new BorrowBookControl()).run();        
     }
 
 
