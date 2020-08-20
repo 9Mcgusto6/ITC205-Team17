@@ -190,7 +190,7 @@ public class Main {
             library.checkCurrentLoans();
             output(dateFormat.format(calendar.getDate()));
             
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException exception) {
              output("\nInvalid number of days\n");
         }
     }
@@ -216,7 +216,7 @@ public class Main {
             Member member = library.addMember(lastName, firstName, emailAddress, phoneNumber);
             output("\n" + member + "\n");
             
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException exception) {
              output("\nInvalid phone number\n");
         }
         
