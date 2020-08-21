@@ -3,7 +3,7 @@ import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
 import library.borrowbook.BorrowBookUI;
-import library.borrowbook.bORROW_bOOK_cONTROL;
+import library.borrowbook.BorrowBookControl;
 import library.entities.Book;
 import library.entities.Calendar;
 import library.entities.Library;
@@ -27,9 +27,9 @@ public class Main {
     
     
     private static String getMenu() {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
         
-        sb.append("\nLibrary Main Menu\n\n")
+        stringBuilder.append("\nLibrary Main Menu\n\n")
           .append("  M  : add member\n")
           .append("  LM : list members\n")
           .append("\n")
@@ -48,7 +48,7 @@ public class Main {
           .append("\n")
           .append("Choice : ");
           
-        return sb.toString();
+        return stringBuilder.toString();
     }
 
 
@@ -57,7 +57,7 @@ public class Main {
             input = new Scanner(System.in);
             library = Library.getInstance();
             calendar = Calendar.getInstance();
-            dateFormat = new SimpleDateFormat("dd/mm/yyyy");
+            dateFormat = new SimpleDateFormat("dd/MM/yyyy");
     
             for (Member member : library.listMembers()) {
                 output(member);
@@ -169,7 +169,7 @@ public class Main {
 
 
     private static void borrowBook() {
-        new BorrowBookUI(new bORROW_bOOK_cONTROL()).RuN();        
+        new BorrowBookUI(new BorrowBookControl()).run();        
     }
 
 
@@ -190,7 +190,7 @@ public class Main {
             library.checkCurrentLoans();
             output(dateFormat.format(calendar.getDate()));
             
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException exception) {
              output("\nInvalid number of days\n");
         }
     }
@@ -216,7 +216,7 @@ public class Main {
             Member member = library.addMember(lastName, firstName, emailAddress, phoneNumber);
             output("\n" + member + "\n");
             
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException exception) {
              output("\nInvalid phone number\n");
         }
         

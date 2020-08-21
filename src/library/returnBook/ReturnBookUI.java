@@ -39,16 +39,16 @@ public class ReturnBookUI {
                         int bookId = Integer.valueOf(bookInputString).intValue();
                         control.bookScanned(bookId);
                     }
-                    catch (NumberFormatException e) {
+                    catch (NumberFormatException exception) {
                         output("Invalid bookId");
                     }                    
                 }
                 break;                
                 
             case INSPECTING:
-                String ans = input("Is book damaged? (Y/N): ");
+                String answer = input("Is book damaged? (Y/N): ");
                 boolean isDamaged = false;
-                if (ans.toUpperCase().equals("Y")) {                    
+                if (answer.toUpperCase().equals("Y")) {                    
                     isDamaged = true;
                 }
                 control.dischargeLoan(isDamaged);

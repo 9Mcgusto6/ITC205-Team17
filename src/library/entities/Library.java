@@ -59,8 +59,8 @@ public class Library implements Serializable {
 					Calendar.getInstance().setDate(self.loanDate); //Calendar.gEtInStAnCe().SeT_DaTe changed to getInstance().setDate to match method in Calendar
 					libraryFile.close();
 				}
-				catch (Exception e) {
-					throw new RuntimeException(e);
+				catch (Exception exception) {
+					throw new RuntimeException(exception);
 				}
 			}
 			else {
@@ -79,8 +79,8 @@ public class Library implements Serializable {
 				libraryFile.flush();
 				libraryFile.close();	
 			}
-			catch (Exception e) {
-				throw new RuntimeException(e);
+			catch (Exception exception) {
+				throw new RuntimeException(exception);
 			}
 		}
 	}
@@ -132,10 +132,10 @@ public class Library implements Serializable {
 	}
 
 
-	public Book addBook(String a, String t, String c) {	//Changed aDd_BoOk to addBook	
-		Book b = new Book(a, t, c, getNextBookId());
-		catalog.put(b.getId(), b);		
-		return b;
+	public Book addBook(String author, String title, String callNumber) {	//Changed aDd_BoOk to addBook	
+		Book book = new Book(author, title, callNumber, getNextBookId());
+		catalog.put(book.getId(), book);		
+		return book;
 	}
 
 	
@@ -242,8 +242,9 @@ public class Library implements Serializable {
 			currentBook.canRepair();
 			damagedBooks.remove(currentBook.getId());
 		}
-		else 
+		else {
 			throw new RuntimeException("Library: repairBook: book is not damaged");	
+		}
 	}	
 	
 }
